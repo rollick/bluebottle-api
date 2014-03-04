@@ -5,15 +5,16 @@ HOST: https://bluebottle.onepercentclub.com
 Bluebottle API is a the crowdsourcing API framework initiated by the 1%CLUB.
 
 # Group Tasks
+Tasks related resources of the **Bluebottle API**
 
 ## Tasks Collection [/api/bb_tasks]
 ### List all Tasks [GET]
 + Response 200 (application/json)
 
         {
-          count: 2
-          next: null
-          previous: null
+          count: 2,
+          next: null,
+          previous: null,
           results: 
             [{
               "id": 1, 
@@ -39,23 +40,122 @@ A single Task object with all its details
 
     + Body
 
-            { "id": 2, "title": "Paint the minivan" }
+        {
+          members: [ ]
+          files: [ ]
+          project: "minivan-for-peace"
+          skill: 6
+          author: {
+            id: 2616
+            first_name: ""
+            last_name: ""
+            username: "rygarcia"
+            avatar: ""
+            full_name: "Brian Gooddeeds"
+            short_name: "Brian"
+          }
+          status: "open"
+          tags: [ ]
+          meta_data: {
+            title: "Paint a Minivan"
+            description: "Paint a minivan some crazy colours"
+            fb_title: null
+            url: null
+            tweet: null
+            image: null
+            keywords: ""
+          }
+          id: 53
+          title: "Paint a Minivan"
+          description: "Paint a minivan some crazy colours"
+          end_goal: ""
+          location: ""
+          time_needed: "1"
+          people_needed: 1
+          date_status_change: null
+          deadline: "2014-03-04T11:55:12Z"
+          created: "2014-03-04T10:55:13.548Z"
+          updated: "2014-03-04T10:55:13.571Z"
+        }
 
-### Remove a Note [DELETE]
+### Remove a Task [DELETE]
 + Response 204
 
+## Task Files Collection [/api/bb_tasks/files/]
++ Parameters
+    + task (required, number, `1`) ... Numeric `task` of the Task to perform action with. Has example value.
+
+### List all Task Files [GET]
++ Response 200 (application/json)
+
+        {
+          count: 1,
+          next: null,
+          previous: null,
+          results: 
+            [{
+              author: {
+                id: 429,
+                first_name: "",
+                last_name: "",
+                username: "brian",
+                avatar: http://bluebottle.apiary.io/static/media/cache/75/4b/754b98c2a8171717c6428912ec6293d2.jpg,
+                full_name: "Brian Gooddeeds",
+                short_name: "Brian"
+              },
+              file: {
+                url: "/static/media/task_files/frog.jpg",
+                name: "frog.jpg",
+                size: "70.1 KB"
+              },
+              id: 1,
+              title: "Let's plant trees",
+              created: "2014-02-03T15:45:57.981Z",
+              updated: "2014-02-03T15:45:57.983Z",
+              task: 46
+            }]
+        }
+
+## Task File [/api/bb_tasks/files/{id}]
++ Parameters
+    + task (required, number, `1`) ... Numeric `id` of the Task to perform action with. Has example value.
+
+### Retrieve a Task File [GET]
++ Response 200 (application/json)
+
+        {
+          author: {
+            id: 429,
+            first_name: "",
+            last_name: "",
+            username: "brian",
+            avatar: http://bluebottle.apiary.io/static/media/cache/75/4b/754b98c2a8171717c6428912ec6293d2.jpg,
+            full_name: "Brian Gooddeeds",
+            short_name: "Brian"
+          },
+          file: {
+            url: "/static/media/task_files/frog.jpg",
+            name: "frog.jpg",
+            size: "70.1 KB"
+          },
+          id: 1,
+          title: "Let's plant trees",
+          created: "2014-02-03T15:45:57.981Z",
+          updated: "2014-02-03T15:45:57.983Z",
+          task: 46
+        }
 
 # Group Projects
-Projects related resources of the **BlueBottle API**
+Projects related resources of the **Bluebottle API**
 
 ## Projects Collection [/api/bb_projects]
 ### List all Projects [GET]
 + Response 200 (application/json)
 
         {
-          count: 1
-          next: null
-          previous: null
+          count: 1,
+          next: null,
+          previous: null,
           results: 
             [{
               "id": 1,
