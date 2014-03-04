@@ -8,6 +8,7 @@ Bluebottle API is a the crowdsourcing API framework initiated by the 1%CLUB.
 Tasks related resources of the **Bluebottle API**
 
 ## Tasks Collection [/api/bb_tasks]
+
 ### List all Tasks [GET]
 + Response 200 (application/json)
 
@@ -49,7 +50,7 @@ A single Task object with all its details
             id: 2616
             first_name: ""
             last_name: ""
-            username: "rygarcia"
+            username: "brian"
             avatar: ""
             full_name: "Brian Gooddeeds"
             short_name: "Brian"
@@ -81,11 +82,12 @@ A single Task object with all its details
 ### Remove a Task [DELETE]
 + Response 204
 
-## Task Files Collection [/api/bb_tasks/files/]
+## Task Files Collection [/api/bb_tasks/files/{?task}]
 + Parameters
-    + task (required, number, `1`) ... Numeric `task` of the Task to perform action with. Has example value.
+    + task (required, number, `1`) ... Numeric `task` id of the Task to perform action with. Has example value.
 
 ### List all Task Files [GET]
+
 + Response 200 (application/json)
 
         {
@@ -118,7 +120,7 @@ A single Task object with all its details
 
 ## Task File [/api/bb_tasks/files/{id}]
 + Parameters
-    + task (required, number, `1`) ... Numeric `id` of the Task to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the Task to perform action with. Has example value.
 
 ### Retrieve a Task File [GET]
 + Response 200 (application/json)
@@ -149,6 +151,7 @@ A single Task object with all its details
 Projects related resources of the **Bluebottle API**
 
 ## Projects Collection [/api/bb_projects]
+
 ### List all Projects [GET]
 + Response 200 (application/json)
 
@@ -190,4 +193,171 @@ A single Project object with all its details
             { "id": 2, "title": "Minivan For Equality" }
 
 ### Remove a Note [DELETE]
++ Response 204
+
+# Group Organizations
+Organizations related resources of the **Bluebottle API**
+
+## Organizations Collection [/api/bb_organizations]
+
+### List all Organizations [GET]
++ Response 200 (application/json)
+
+        {
+          count: 1,
+          next: null,
+          previous: null,
+          results: 
+            [{
+              "id": 1,
+              "name": "Minivans-R-Us"
+            }]
+        }
+
+### Create an Organization [POST]
++ Request (application/json)
+
+        { "name": "Tricycles Inc" }
+
++ Response 201 (application/json)
+
+        { "id": 2, "name": "Tricycles Inc" }
+
+## Project [/api/bb_organizations/{id}]
+A single Organization object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Organization to perform action with. Has example value.
+
+### Retrieve a Organization [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "name": "Tricycles Inc" }
+
+### Remove a Organization [DELETE]
++ Response 204
+
+
+## Organization Documents Collection [/api/bb_organizations/documents/manage/{?organization}]
+
++ Parameters
+    + organization (required, number, `1`) ... Numeric `organization` id of the Organization to perform action with. Has example value.
+
+### List all Organization Documents [GET]
+
++ Response 200 (application/json)
+
+<!--         {
+          count: 1,
+          next: null,
+          previous: null,
+          results: 
+            [{
+              author: {
+                id: 429,
+                first_name: "",
+                last_name: "",
+                username: "brian",
+                avatar: http://bluebottle.apiary.io/static/media/cache/75/4b/754b98c2a8171717c6428912ec6293d2.jpg,
+                full_name: "Brian Gooddeeds",
+                short_name: "Brian"
+              },
+              file: {
+                url: "/static/media/task_files/frog.jpg",
+                name: "frog.jpg",
+                size: "70.1 KB"
+              },
+              id: 1,
+              title: "Let's plant trees",
+              created: "2014-02-03T15:45:57.981Z",
+              updated: "2014-02-03T15:45:57.983Z",
+              task: 46
+            }]
+        } -->
+
+## Organization Document [/api/bb_organizations/documents/manage/{id}]
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Document to perform action with. Has example value.
+
+### Retrieve a Organization Document [GET]
++ Response 200 (application/json)
+
+<!--         {
+          author: {
+            id: 429,
+            first_name: "",
+            last_name: "",
+            username: "brian",
+            avatar: http://bluebottle.apiary.io/static/media/cache/75/4b/754b98c2a8171717c6428912ec6293d2.jpg,
+            full_name: "Brian Gooddeeds",
+            short_name: "Brian"
+          },
+          file: {
+            url: "/static/media/task_files/frog.jpg",
+            name: "frog.jpg",
+            size: "70.1 KB"
+          },
+          id: 1,
+          title: "Let's plant trees",
+          created: "2014-02-03T15:45:57.981Z",
+          updated: "2014-02-03T15:45:57.983Z",
+          task: 46
+        } -->
+
+## Organizations Manage Collection [/api/bb_organizations/manage{?organization}]
+
++ Parameters
+    + organization (required, number, `1`) ... Numeric `organization` of the Organization to perform action with. Has example value.
+
+### List all Organizations (Manage) [GET]
++ Response 200 (application/json)
+
+<!--         {
+          count: 1,
+          next: null,
+          previous: null,
+          results: 
+            [{
+              "id": 1,
+              "name": "Minivans-R-Us"
+            }]
+        } -->
+
+### Create an Organization [POST]
+
++ Request (application/json)
+
+        { "name": "Tricycles Inc" }
+
++ Response 201 (application/json)
+
+        { "id": 2, "name": "Tricycles Inc" }
+
+## Organization (Manage) [/api/bb_organizations/manage/{id}]
+
+A single Organization (Manage) object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Organization to perform action with. Has example value.
+
+### Retrieve a Organization (Manage) [GET]
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "name": "Tricycles Inc" }
+
+### Remove a Organization [DELETE]
 + Response 204
