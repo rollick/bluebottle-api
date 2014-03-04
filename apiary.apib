@@ -41,43 +41,43 @@ A single Task object with all its details
 
     + Body
 
-        {
-          members: [ ],
-          files: [ ],
-          project: "minivan-for-peace",
-          skill: 6,
-          author: {
-            id: 2616,
-            first_name: "",
-            last_name: "",
-            username: "brian",
-            avatar: "",
-            full_name: "Brian Gooddeeds",
-            short_name: "Brian",
-          },
-          status: "open",
-          tags: [ ],
-          meta_data: {
-            title: "Paint a Minivan",
-            description: "Paint a minivan some crazy colours",
-            fb_title: null,
-            url: null,
-            tweet: null,
-            image: null,
-            keywords: "",
-          },
-          id: 53,
-          title: "Paint a Minivan",
-          description: "Paint a minivan some crazy colours",
-          end_goal: "",
-          location: "",
-          time_needed: "1",
-          people_needed: 1,
-          date_status_change: null,
-          deadline: "2014-03-04T11:55:12Z",
-          created: "2014-03-04T10:55:13.548Z",
-          updated: "2014-03-04T10:55:13.571Z",
-        }
+            {
+                members: [ ],
+                files: [ ],
+                project: "minivan-for-peace",
+                skill: 6,
+                author: {
+                    id: 2616,
+                    first_name: "",
+                    last_name: "",
+                    username: "brian",
+                    avatar: "",
+                    full_name: "Brian Gooddeeds",
+                    short_name: "Brian",
+                },
+                status: "open",
+                tags: [ ],
+                meta_data: {
+                    title: "Paint a Minivan",
+                    description: "Paint a minivan some crazy colours",
+                    fb_title: null,
+                    url: null,
+                    tweet: null,
+                    image: null,
+                    keywords: "",
+                },
+                id: 53,
+                title: "Paint a Minivan",
+                description: "Paint a minivan some crazy colours",
+                end_goal: "",
+                location: "",
+                time_needed: "1",
+                people_needed: 1,
+                date_status_change: null,
+                deadline: "2014-03-04T11:55:12Z",
+                created: "2014-03-04T10:55:13.548Z",
+                updated: "2014-03-04T10:55:13.571Z",
+            }
 
 ### Remove a Task [DELETE]
 + Response 204
@@ -87,7 +87,6 @@ A single Task object with all its details
     + task (required, number, `1`) ... Numeric `task` id of the Task to perform action with. Has example value.
 
 ### List all Task Files [GET]
-
 + Response 200 (application/json)
 
         {
@@ -243,17 +242,15 @@ A single Organization object with all its details
 ### Remove a Organization [DELETE]
 + Response 204
 
-
 ## Organization Documents Collection [/api/bb_organizations/documents/manage/{?organization}]
 
 + Parameters
     + organization (required, number, `1`) ... Numeric `organization` id of the Organization to perform action with. Has example value.
 
 ### List all Organization Documents [GET]
-
 + Response 200 (application/json)
 
-<!--         {
+        {
           count: 1,
           next: null,
           previous: null,
@@ -282,14 +279,13 @@ A single Organization object with all its details
         } -->
 
 ## Organization Document [/api/bb_organizations/documents/manage/{id}]
-
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Document to perform action with. Has example value.
 
 ### Retrieve a Organization Document [GET]
 + Response 200 (application/json)
 
-<!--         {
+        {
           author: {
             id: 429,
             first_name: "",
@@ -309,17 +305,16 @@ A single Organization object with all its details
           created: "2014-02-03T15:45:57.981Z",
           updated: "2014-02-03T15:45:57.983Z",
           task: 46
-        } -->
+        }
 
 ## Organizations Manage Collection [/api/bb_organizations/manage{?organization}]
-
 + Parameters
     + organization (required, number, `1`) ... Numeric `organization` of the Organization to perform action with. Has example value.
 
-### List all Organizations (Manage) [GET]
+### List all Organizations [GET]
 + Response 200 (application/json)
 
-<!--         {
+        {
           count: 1,
           next: null,
           previous: null,
@@ -328,10 +323,9 @@ A single Organization object with all its details
               "id": 1,
               "name": "Minivans-R-Us"
             }]
-        } -->
+        }
 
 ### Create an Organization [POST]
-
 + Request (application/json)
 
         { "name": "Tricycles Inc" }
@@ -340,15 +334,13 @@ A single Organization object with all its details
 
         { "id": 2, "name": "Tricycles Inc" }
 
-## Organization (Manage) [/api/bb_organizations/manage/{id}]
-
+## Organization [/api/bb_organizations/manage/{id}]
 A single Organization (Manage) object with all its details
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Organization to perform action with. Has example value.
 
-### Retrieve a Organization (Manage) [GET]
-
+### Retrieve a Organization [GET]
 + Response 200 (application/json)
 
     + Header
