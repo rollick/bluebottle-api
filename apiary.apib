@@ -1,0 +1,47 @@
+FORMAT: 1A
+HOST: https://bluebottle.onepercentclub.com
+
+# Bluebottle
+Bluebottle API is a the crowdsourcing API framework initiated by the 1%CLUB.
+
+# Group Projects
+Projects related resources of the **BlueBottle API**
+
+## Projects Collection [/api/bb_projects]
+### List all Projects [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Jogging in park"
+        }, {
+          "id": 2, "title": "Pick-up posters from post-office"
+        }]
+
+### Create a Project [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Buy cheesey and bread for breakfast!!!" }
+
+## Project [/api/bb_projects/{id}]
+A single Project object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+
+### Retrieve a Note [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Note [DELETE]
++ Response 204
