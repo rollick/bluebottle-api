@@ -1,7 +1,7 @@
 FORMAT: 1A
-HOST: https://bluebottle.onepercentclub.com
+HOST: https://donations.onepercentclub.com
 
-# Bluebottle
+# Donations
 Bluebottle API is a the crowdsourcing API framework initiated by the 1%CLUB.
 
 # Group Tasks
@@ -353,3 +353,140 @@ A single Organization (Manage) object with all its details
 
 ### Remove a Organization [DELETE]
 + Response 204
+
+# Group Order
+Orders related resources of the **Donations API**
+
+## Order Collection [/orders]
+### List all Orders [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "total_amount": 100, "user_id": 1
+        }, {
+          "id": 2, "total_amount": 50, "user_id": 1
+        }]
+
+### Create an Order [POST]
++ Request (application/json)
+
+        { "user_id": 1 }
+
++ Response 201 (application/json)
+
+        { "id": 3, "total_amount": 0, "user_id": 1 }
+
+## Order [/orders/{id}]
+A single Order object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Order to perform action with. Has example value.
+
+### Retrieve an Order [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "total_amount": 50, "user_id": 1 }
+
+
+# Group Donation
+Donation related resources of the **Donations API**
+
+## Donation Collection [/donations]
+### List all Donations [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+        }, {
+          "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+        }]
+
+### Create a Donation [POST]
++ Request (application/json)
+
+        { "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
+
++ Response 201 (application/json)
+
+        { "id": 3, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
+
+## Donation [/donations/{id}]
+A single Donation object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Donation to perform action with. Has example value.
+
+### Retrieve a Donation [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
+
+### Remove a Donation [DELETE]
++ Response 204
+
+# Group Payment
+Payment related resources of the **Donations API**
+
+## Payment Collection [/payments]
+### List all Payments [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "payment_method_id": 1, "order_id": 1, "status": "closed"
+        }, {
+          "id": 2, "payment_method_id": 1, "order_id": 2, "status": "pending"
+        }]
+
+### Create a Payment [POST]
++ Request (application/json)
+
+        { "payment_method_id": 1, "order_id": 1 }
+
++ Response 201 (application/json)
+
+        { "id": 3, "payment_method_id": 1, "order_id": 1, "status": "open" }
+
+## Order [/payments/{id}]
+A single Payment object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Order to perform action with. Has example value.
+
+### Retrieve a Payment [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "payment_method_id": 1, "order_id": 2, "status": "pending" }
+
+### Remove a Payment [DELETE]
++ Response 204
+
+# Group Payment Method
+Payment Method related resources of the **Donations API**
+
+## Payment Method Collection [/payment-methods]
+### List all PaymentMethods [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "provider_id": 1, "payment_type": "credit_card", "payment_process": "popup"
+        }, {
+          "id": 2, "provider_id": 2, "payment_type": "paypal", "payment_process": "redirect"
+        }]
