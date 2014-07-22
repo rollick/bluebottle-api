@@ -384,9 +384,19 @@ My Donation related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-            "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1, "status": "pending"
+            "id": 1, 
+            "amount": 20, 
+            "project_id": 1,
+            "fundraiser_id": null, 
+            "order_id": 1, 
+            "status": "pending"
         }, {
-            "id": 2, "amount": 30, "project_id": null, "fundraiser_id": 1, "order_id": 2, "status": "closed"
+            "id": 2, 
+            "amount": 30, 
+            "project_id": null, 
+            "fundraiser_id": 1, 
+            "order_id": 2, 
+            "status": "closed"
         }]
 
 ### Create a Donation [POST]
@@ -415,11 +425,26 @@ A single My Donation object with all its details
 + Response 200 (application/json)
 
         [{
-            "id": 1, "project_id": 1, "amount": 20, "user_id": 1, "order_id": 1, "status": "closed"
+            "id": 1, 
+            "project_id": 1, 
+            "amount": 20, 
+            "user_id": 1, 
+            "order_id": 1, 
+            "status": "closed"
         }, {
-            "id": 2, "project_id": 1, "amount": 30, "user_id": 2, "order_id": 2, "status": "pending"
+            "id": 2, 
+            "project_id": 1, 
+            "amount": 30, 
+            "user_id": 2, 
+            "order_id": 2, 
+            "status": "pending"
         }, {
-            "id": 2, "project_id": 2, "amount": 30, "user_id": 2, "order_id": 3, "status": "closed"
+            "id": 2, 
+            "project_id": 2, 
+            "amount": 30, 
+            "user_id": 2, 
+            "order_id": 3, 
+            "status": "closed"
         }]
 
 ## My Project Donations [/api/donations/my-projects/{project_id}]
@@ -564,7 +589,7 @@ Payment Method related resources of the **Donations API**
 ## Payment Methods Collection [/api/payment-methods?amount={amount}&country={country_code}]
 + Parameters
     + amount (required, number, `50`) ... Numeric `amount` of the payment total amount.
-    + country (required, string, `nl`) ... Two character string `country_code` for the current user.
+    + country (required, string, `nl`) ... String `country_code` of two character country code for the current user.
 
 ### List all PaymentMethods [GET]
 + Response 200 (application/json)
