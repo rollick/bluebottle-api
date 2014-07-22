@@ -392,9 +392,9 @@ My Donation related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1, "status": "pending"
         }, {
-          "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+          "id": 2, "amount": 30, "project_id": null, "fundraiser_id": 1, "order_id": 2, "status": "closed"
         }]
 
 ### Create a Donation [POST]
@@ -404,7 +404,7 @@ My Donation related resources of the **Donations API**
 
 + Response 201 (application/json)
 
-        { "id": 3, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
+        { "id": 3, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1, "status": "open" }
 
 ## My Donation [/api/donations/my/{id}]
 A single My Donation object with all its details
@@ -416,7 +416,7 @@ A single My Donation object with all its details
 
     + Body
 
-            { "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
+            { "id": 2, "amount": 30, "project_id": null, "fundraiser_id": 1, "order_id": 2, "status": "closed" }
 
 ## My Project Donation Collection [/api/donations/my-projects]
 ### List all My Project Donations [GET]
@@ -438,6 +438,31 @@ A single My Donation object with all its details
     + Body
 
             { "id": 2, "total_amount": 50, "user_id": 1 }
+
+
+## My Fundraiser Donation Collection [/api/donations/my-fundraisers]
+### List all My Project Donations [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+        }, {
+          "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+        }]
+
+## My Fundraiser Donations [/api/donations/my-fundraisers/{fundraiser_id}]
++ Parameters
+    + fundraiser_id (required, number, `1`) ... Numeric `fundraiser_id` of the Order to perform action with. Has example value.
+
+### List all Donations for one of My Fundraisers [GET]
++ Response 200 (application/json)
+
+    + Body
+    
+        [{
+          "id": 2, "total_amount": 50, "user_id": 1 
+        }]
+
 
 # Group Donations
 Donation (public details) related resources of the **Donations API**
