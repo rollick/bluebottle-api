@@ -423,9 +423,11 @@ A single My Donation object with all its details
 + Response 200 (application/json)
 
         [{
-          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+          "id": 1, "project_id": 1, "amount": 20, "user_id": 1, "order_id": 1, "status": "closed"
         }, {
-          "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+          "id": 2, "project_id": 1, "amount": 30, "user_id": 2, "order_id": 2, "status": "pending"
+        }, {
+          "id": 2, "project_id": 2, "amount": 30, "user_id": 2, "order_id": 3, "status": "closed"
         }]
 
 ## My Project Donation [/api/donations/my-projects/{project_id}]
@@ -437,7 +439,11 @@ A single My Donation object with all its details
 
     + Body
 
-            { "id": 2, "total_amount": 50, "user_id": 1 }
+            [{
+                "id": 1, "project_id": 1, "amount": 50, "user_id": 1, "order_id": 1, "status": "closed"
+            }, {
+                "id": 2, "project_id": 1, "amount": 10, "user_id": 2, "order_id": 2, "status": "pending"
+            }]
 
 
 ## My Fundraiser Donation Collection [/api/donations/my-fundraisers]
@@ -445,11 +451,11 @@ A single My Donation object with all its details
 + Response 200 (application/json)
 
         [{
-          "id": 1, "fundraiser_id": 1, "amount": 20, "user_id": 1, "order_id": 1, "status": "closed"
+          "id": 1, "fundraiser_id": 1, "amount": 20, "user_id": 1, "order_id": 4, "status": "closed"
         }, {
-          "id": 2, "fundraiser_id": 1, "amount": 30, "user_id": 2, "order_id": 2, "status": "pending"
+          "id": 2, "fundraiser_id": 1, "amount": 30, "user_id": 2, "order_id": 5, "status": "pending"
         }, {
-          "id": 2, "fundraiser_id": 2, "amount": 30, "user_id": 2, "order_id": 3, "status": "closed"
+          "id": 2, "fundraiser_id": 2, "amount": 30, "user_id": 2, "order_id": 6, "status": "closed"
         }]
 
 ## My Fundraiser Donations [/api/donations/my-fundraisers/{fundraiser_id}]
@@ -460,9 +466,9 @@ A single My Donation object with all its details
 + Response 200 (application/json)
 
         [{
-          "id": 1, "fundraiser_id": 1, "amount": 50, "user_id": 1, "order_id": 1, "status": "closed"
+          "id": 1, "fundraiser_id": 1, "amount": 50, "user_id": 1, "order_id": 4, "status": "closed"
         }, {
-          "id": 2, "fundraiser_id": 1, "amount": 10, "user_id": 2, "order_id": 2, "status": "pending"
+          "id": 2, "fundraiser_id": 1, "amount": 10, "user_id": 2, "order_id": 5, "status": "pending"
         }]
 
 
