@@ -183,10 +183,6 @@ A single Project object with all its details
 ### Retrieve a Note [GET]
 + Response 200 (application/json)
 
-    + Header
-
-            X-My-Header: The Value
-
     + Body
 
             { "id": 2, "title": "Minivan For Equality" }
@@ -230,10 +226,6 @@ A single Organization object with all its details
 
 ### Retrieve a Organization [GET]
 + Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
 
     + Body
 
@@ -357,9 +349,9 @@ Orders related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-          "id": 1, "total_amount": 100, "user_id": 1
+            "id": 1, "total_amount": 100, "user_id": 1
         }, {
-          "id": 2, "total_amount": 50, "user_id": 1
+            "id": 2, "total_amount": 50, "user_id": 1
         }]
 
 ### Create an Order [POST]
@@ -392,9 +384,9 @@ My Donation related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1, "status": "pending"
+            "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1, "status": "pending"
         }, {
-          "id": 2, "amount": 30, "project_id": null, "fundraiser_id": 1, "order_id": 2, "status": "closed"
+            "id": 2, "amount": 30, "project_id": null, "fundraiser_id": 1, "order_id": 2, "status": "closed"
         }]
 
 ### Create a Donation [POST]
@@ -423,11 +415,11 @@ A single My Donation object with all its details
 + Response 200 (application/json)
 
         [{
-          "id": 1, "project_id": 1, "amount": 20, "user_id": 1, "order_id": 1, "status": "closed"
+            "id": 1, "project_id": 1, "amount": 20, "user_id": 1, "order_id": 1, "status": "closed"
         }, {
-          "id": 2, "project_id": 1, "amount": 30, "user_id": 2, "order_id": 2, "status": "pending"
+            "id": 2, "project_id": 1, "amount": 30, "user_id": 2, "order_id": 2, "status": "pending"
         }, {
-          "id": 2, "project_id": 2, "amount": 30, "user_id": 2, "order_id": 3, "status": "closed"
+            "id": 2, "project_id": 2, "amount": 30, "user_id": 2, "order_id": 3, "status": "closed"
         }]
 
 ## My Project Donation [/api/donations/my-projects/{project_id}]
@@ -451,11 +443,11 @@ A single My Donation object with all its details
 + Response 200 (application/json)
 
         [{
-          "id": 1, "fundraiser_id": 1, "amount": 20, "user_id": 1, "order_id": 4, "status": "closed"
+            "id": 1, "fundraiser_id": 1, "amount": 20, "user_id": 1, "order_id": 4, "status": "closed"
         }, {
-          "id": 2, "fundraiser_id": 1, "amount": 30, "user_id": 2, "order_id": 5, "status": "pending"
+            "id": 2, "fundraiser_id": 1, "amount": 30, "user_id": 2, "order_id": 5, "status": "pending"
         }, {
-          "id": 2, "fundraiser_id": 2, "amount": 30, "user_id": 2, "order_id": 6, "status": "closed"
+            "id": 2, "fundraiser_id": 2, "amount": 30, "user_id": 2, "order_id": 6, "status": "closed"
         }]
 
 ## My Fundraiser Donations [/api/donations/my-fundraisers/{fundraiser_id}]
@@ -496,9 +488,9 @@ A single Donation object with public details
 + Response 200 (application/json)
 
         [{
-          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+            "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }, {
-          "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+            "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }]
 
 ## User Donation Collection [/api/donations/user/{user_id}]
@@ -509,9 +501,9 @@ A single Donation object with public details
 + Response 200 (application/json)
 
         [{
-          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+            "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }, {
-          "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+            "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }]
 
 # Group Payment
@@ -522,9 +514,9 @@ Payment related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-          "id": 1, "payment_method_id": 1, "order_id": 1, "status": "closed"
+            "id": 1, "payment_method_id": 1, "order_id": 1, "status": "closed"
         }, {
-          "id": 2, "payment_method_id": 1, "order_id": 2, "status": "pending"
+            "id": 2, "payment_method_id": 1, "order_id": 2, "status": "pending"
         }]
 
 ### Create a Payment [POST]
@@ -560,7 +552,7 @@ Payment Method related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-          "id": 1, "provider_id": 1, "payment_type": "credit_card", "payment_process": "popup"
+            "id": 1, "provider_id": 1, "payment_type": "credit_card", "payment_process": "popup"
         }, {
-          "id": 2, "provider_id": 2, "payment_type": "paypal", "payment_process": "redirect"
+            "id": 2, "provider_id": 2, "payment_type": "paypal", "payment_process": "redirect"
         }]
