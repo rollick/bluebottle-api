@@ -394,8 +394,8 @@ A single Order object with all its details
             { "id": 2, "total_amount": 50, "user_id": 1 }
 
 
-# Group My Donation
-My Donation related resources of the **Donations API**
+# Group Donation
+Donation related resources of the **Donations API**
 
 ## My Donation Collection [/api/donations/my]
 ### List all My Donations [GET]
@@ -433,8 +433,6 @@ A single My Donation object with all its details
 
             { "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
 
-# Group Project Donation
-Project Donation related resources of the **Donations API**
 
 ## Project Donation Collection [/api/donations/project/{project_id}]
 ### List all Donations by Project [GET]
@@ -447,7 +445,7 @@ Project Donation related resources of the **Donations API**
         }]
 
 ## User Donation Collection [/api/donations/user/{user_id}]
-### List all Donations by User (public details) [GET]
+### List all Donations by User [GET]
 + Response 200 (application/json)
 
         [{
@@ -455,6 +453,24 @@ Project Donation related resources of the **Donations API**
         }, {
           "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }]
+
+## Donation [/api/donations/{id}]
+A single Donation object with public details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Donation to perform action with. Has example value.
+
+### Retrieve a Donation [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
+
 
 # Group Payment
 Payment related resources of the **Donations API**
