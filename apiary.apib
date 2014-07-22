@@ -357,7 +357,7 @@ A single Organization (Manage) object with all its details
 # Group Order
 Orders related resources of the **Donations API**
 
-## Order Collection [/orders]
+## Order Collection [/api/orders]
 ### List all Orders [GET]
 + Response 200 (application/json)
 
@@ -376,7 +376,7 @@ Orders related resources of the **Donations API**
 
         { "id": 3, "total_amount": 0, "user_id": 1 }
 
-## Order [/orders/{id}]
+## Order [/api/orders/{id}]
 A single Order object with all its details
 
 + Parameters
@@ -397,7 +397,7 @@ A single Order object with all its details
 # Group Donation
 Donation related resources of the **Donations API**
 
-## Donation Collection [/donations]
+## Donation Collection [/api/donations]
 ### List all Donations [GET]
 + Response 200 (application/json)
 
@@ -416,7 +416,7 @@ Donation related resources of the **Donations API**
 
         { "id": 3, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
 
-## Donation [/donations/{id}]
+## Donation [/api/donations/{id}]
 A single Donation object with all its details
 
 + Parameters
@@ -439,7 +439,7 @@ A single Donation object with all its details
 # Group Payment
 Payment related resources of the **Donations API**
 
-## Payment Collection [/payments]
+## Payment Collection [/api/payments]
 ### List all Payments [GET]
 + Response 200 (application/json)
 
@@ -458,7 +458,7 @@ Payment related resources of the **Donations API**
 
         { "id": 3, "payment_method_id": 1, "order_id": 1, "status": "open" }
 
-## Order [/payments/{id}]
+## Order [/api/payments/{id}]
 A single Payment object with all its details
 
 + Parameters
@@ -481,7 +481,7 @@ A single Payment object with all its details
 # Group Payment Method
 Payment Method related resources of the **Donations API**
 
-## Payment Method Collection [/payment-methods]
+## Payment Method Collection [/api/payment-methods]
 ### List all PaymentMethods [GET]
 + Response 200 (application/json)
 
