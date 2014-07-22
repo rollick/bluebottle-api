@@ -434,8 +434,21 @@ A single My Donation object with all its details
             { "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
 
 
-## Donation Collection [/api/donations/project/{project_id}]
-### List all Donations [GET]
+## Project Donation Collection [/api/donations/project/{project_id}]
+### List all Donations by Project (public details) [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+        }, {
+          "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+        }]
+
+## User Donation Collection [/api/donations/user/{user_id}]
+### List all Donations by User (public details) [GET]
++ Parameters
+    + user_id (required, number, `1`) ... Numeric `user_id` of the User to perform action with. Has example value.
+
 + Response 200 (application/json)
 
         [{
@@ -445,7 +458,7 @@ A single My Donation object with all its details
         }]
 
 ## Donation [/api/donations/{id}]
-A single Donation object with all its details
+A single Donation object with public details
 
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Donation to perform action with. Has example value.
