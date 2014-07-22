@@ -398,7 +398,7 @@ My Donation related resources of the **Donations API**
 
         { "id": 3, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1, "status": "open" }
 
-## My Donation [/api/donations/my/{id}]
+## My Donations [/api/donations/my/{id}]
 A single My Donation object with all its details
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Donation to perform action with. Has example value.
@@ -410,7 +410,7 @@ A single My Donation object with all its details
 
             { "id": 2, "amount": 30, "project_id": null, "fundraiser_id": 1, "order_id": 2, "status": "closed" }
 
-## My Project Donation Collection [/api/donations/my-projects]
+## My Project Donations Collection [/api/donations/my-projects]
 ### List all My Project Donations [GET]
 + Response 200 (application/json)
 
@@ -422,7 +422,7 @@ A single My Donation object with all its details
             "id": 2, "project_id": 2, "amount": 30, "user_id": 2, "order_id": 3, "status": "closed"
         }]
 
-## My Project Donation [/api/donations/my-projects/{project_id}]
+## My Project Donations [/api/donations/my-projects/{project_id}]
 + Parameters
     + project_id (required, number, `1`) ... Numeric `project_id` of the My Donation to perform action with. Has example value.
 
@@ -438,7 +438,7 @@ A single My Donation object with all its details
             }]
 
 
-## My Fundraiser Donation Collection [/api/donations/my-fundraisers]
+## My Fundraiser Donations Collection [/api/donations/my-fundraisers]
 ### List all My Fundraiser Donations [GET]
 + Response 200 (application/json)
 
@@ -467,7 +467,7 @@ A single My Donation object with all its details
 # Group Donations
 Donation (public details) related resources of the **Donations API**
 
-## Donation [/api/donations/{id}]
+## Donations [/api/donations/{id}]
 A single Donation object with public details
 
 + Parameters
@@ -480,7 +480,7 @@ A single Donation object with public details
 
             { "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
 
-## Project Donation Collection [/api/donations/project/{project_id}]
+## Project Donations Collection [/api/donations/project/{project_id}]
 ### List all Donations by Project [GET]
 + Parameters
     + project_id (required, number, `1`) ... Numeric `project_id` of the Donation to perform action with. Has example value.
@@ -493,7 +493,7 @@ A single Donation object with public details
             "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }]
 
-## User Donation Collection [/api/donations/user/{user_id}]
+## User Donations Collection [/api/donations/user/{user_id}]
 ### List all Donations by User [GET]
 + Parameters
     + user_id (required, number, `1`) ... Numeric `user_id` of the Donation to perform action with. Has example value.
@@ -506,10 +506,10 @@ A single Donation object with public details
             "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }]
 
-# Group Payment
+# Group Payments
 Payment related resources of the **Donations API**
 
-## Payment Collection [/api/payments]
+## Payments Collection [/api/payments]
 ### List all Payments [GET]
 + Response 200 (application/json)
 
@@ -528,7 +528,7 @@ Payment related resources of the **Donations API**
 
         { "id": 3, "payment_method_id": 1, "order_id": 1, "status": "open" }
 
-## Order [/api/payments/{id}]
+## Orders [/api/payments/{id}]
 A single Payment object with all its details
 
 + Parameters
@@ -544,10 +544,10 @@ A single Payment object with all its details
 ### Remove a Payment [DELETE]
 + Response 204
 
-# Group Payment Method
+# Group Payment Methods
 Payment Method related resources of the **Donations API**
 
-## Payment Method Collection [/api/payment-methods]
+## Payment Methods Collection [/api/payment-methods]
 ### List all PaymentMethods [GET]
 + Response 200 (application/json)
 
