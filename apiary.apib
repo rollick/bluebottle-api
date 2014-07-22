@@ -501,9 +501,17 @@ A single Donation object with public details
 + Response 200 (application/json)
 
         [{
-            "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+            "id": 1, 
+            "amount": 20, 
+            "project_id": 1, 
+            "fundraiser_id": null, 
+            "order_id": 1
         }, {
-            "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+            "id": 2, 
+            "amount": 30, 
+            "project_id": 1, 
+            "fundraiser_id": null, 
+            "order_id": 1
         }]
 
 # Group Payments
@@ -514,9 +522,15 @@ Payment related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-            "id": 1, "payment_method_id": 1, "order_id": 1, "status": "closed"
+            "id": 1, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
+            "status": "closed"
         }, {
-            "id": 2, "payment_method_id": 1, "order_id": 2, "status": "pending"
+            "id": 2, 
+            "payment_method_id": 1, 
+            "order_id": 2, 
+            "status": "pending"
         }]
 
 ### Create a Payment [POST]
@@ -547,12 +561,20 @@ A single Payment object with all its details
 # Group Payment Methods
 Payment Method related resources of the **Donations API**
 
-## Payment Methods Collection [/api/payment-methods]
+## Payment Methods Collection [/api/payment-methods?amount={amount}&country={country_code}]
++ Parameters
+    + amount (required, number, `50`) ... Numeric `amount` of the payment total amount.
+    + country (required, string, `nl`) ... Two character string `country_code` for the current user.
+
 ### List all PaymentMethods [GET]
 + Response 200 (application/json)
 
         [{
-            "id": 1, "provider_id": 1, "payment_type": "credit_card", "payment_process": "popup"
+            "id": 1, "provider_id": 1, 
+            "payment_type": "credit_card", 
+            "payment_process": "popup"
         }, {
-            "id": 2, "provider_id": 2, "payment_type": "paypal", "payment_process": "redirect"
+            "id": 2, "provider_id": 2, 
+            "payment_type": "paypal", 
+            "payment_process": "redirect"
         }]
