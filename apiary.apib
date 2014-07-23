@@ -406,7 +406,7 @@ My Donation related resources of the **Donations API**
 
 + Response 201 (application/json)
 
-        { "id": 3, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1, "status": "open" }
+        { "id": 3, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1, "status": "open", "created": "2014-07-18T20:42:20.315Z" }
 
 ## My Donations [/api/donations/my/{id}]
 A single My Donation object with all its details
@@ -418,33 +418,18 @@ A single My Donation object with all its details
 
     + Body
 
-            { "id": 2, "amount": 30, "project_id": null, "fundraiser_id": 1, "order_id": 2, "status": "closed" }
+            { "id": 2, "amount": 30, "project_id": null, "fundraiser_id": 1, "order_id": 2, "status": "closed", "created": "2014-07-18T20:42:20.315Z" }
 
 ## My Project Donations Collection [/api/donations/my-projects]
 ### List all My Project Donations [GET]
 + Response 200 (application/json)
 
         [{
-            "id": 1, 
-            "project_id": 1, 
-            "amount": 20, 
-            "user_id": 1, 
-            "order_id": 1, 
-            "status": "closed"
+            "id": 1, "project_id": 1, "amount": 20, "user_id": 1, "order_id": 1, "status": "closed", "created": "2014-07-18T20:42:20.315Z"
         }, {
-            "id": 2, 
-            "project_id": 1, 
-            "amount": 30, 
-            "user_id": 2, 
-            "order_id": 2, 
-            "status": "pending"
+            "id": 2, "project_id": 1, "amount": 30, "user_id": 2, "order_id": 2, "status": "pending", "created": "2014-07-20T20:42:20.315Z"
         }, {
-            "id": 2, 
-            "project_id": 2, 
-            "amount": 30, 
-            "user_id": 2, 
-            "order_id": 3, 
-            "status": "closed"
+            "id": 2, "project_id": 2, "amount": 30, "user_id": 2, "order_id": 3, "status": "closed", "created": "2014-07-20T20:42:20.315Z"
         }]
 
 ## My Project Donations [/api/donations/my-projects/{project_id}]
@@ -457,9 +442,9 @@ A single My Donation object with all its details
     + Body
 
             [{
-                "id": 1, "project_id": 1, "amount": 50, "user_id": 1, "order_id": 1, "status": "closed"
+                "id": 1, "project_id": 1, "amount": 50, "user_id": 1, "order_id": 1, "status": "closed", "created": "2014-07-18T20:42:20.315Z"
             }, {
-                "id": 2, "project_id": 1, "amount": 10, "user_id": 2, "order_id": 2, "status": "pending"
+                "id": 2, "project_id": 1, "amount": 10, "user_id": 2, "order_id": 2, "status": "pending", "created": "2014-07-20T20:42:20.315Z"
             }]
 
 
@@ -468,11 +453,11 @@ A single My Donation object with all its details
 + Response 200 (application/json)
 
         [{
-            "id": 1, "fundraiser_id": 1, "amount": 20, "user_id": 1, "order_id": 4, "status": "closed"
+            "id": 1, "fundraiser_id": 1, "amount": 20, "user_id": 1, "order_id": 4, "status": "closed", "created": "2014-07-18T20:42:20.315Z"
         }, {
-            "id": 2, "fundraiser_id": 1, "amount": 30, "user_id": 2, "order_id": 5, "status": "pending"
+            "id": 2, "fundraiser_id": 1, "amount": 30, "user_id": 2, "order_id": 5, "status": "pending", "created": "2014-07-20T20:42:20.315Z"
         }, {
-            "id": 2, "fundraiser_id": 2, "amount": 30, "user_id": 2, "order_id": 6, "status": "closed"
+            "id": 2, "fundraiser_id": 2, "amount": 30, "user_id": 2, "order_id": 6, "status": "closed", "created": "2014-07-22T20:42:20.315Z"
         }]
 
 ## My Fundraiser Donations [/api/donations/my-fundraisers/{fundraiser_id}]
@@ -483,9 +468,9 @@ A single My Donation object with all its details
 + Response 200 (application/json)
 
         [{
-          "id": 1, "fundraiser_id": 1, "amount": 50, "user_id": 1, "order_id": 4, "status": "closed"
+          "id": 1, "fundraiser_id": 1, "amount": 50, "user_id": 1, "order_id": 4, "status": "closed", "created": "2014-07-20T20:42:20.315Z"
         }, {
-          "id": 2, "fundraiser_id": 1, "amount": 10, "user_id": 2, "order_id": 5, "status": "pending"
+          "id": 2, "fundraiser_id": 1, "amount": 10, "user_id": 2, "order_id": 5, "status": "pending", "created": "2014-07-20T20:42:20.315Z"
         }]
 
 
@@ -503,7 +488,14 @@ A single Donation object with public details
 
     + Body
 
-            { "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
+            { 
+                "id": 2, 
+                "amount": 30, 
+                "project_id": 1, 
+                "fundraiser_id": null, 
+                "order_id": 1,
+                "created": "2014-07-18T20:42:20.315Z"
+            }
 
 ## Project Donations Collection [/api/donations/project/{project_id}]
 ### List all Donations by Project [GET]
@@ -530,13 +522,15 @@ A single Donation object with public details
             "amount": 20, 
             "project_id": 1, 
             "fundraiser_id": null, 
-            "order_id": 1
+            "order_id": 1,
+            "created": "2014-07-18T20:42:20.315Z"
         }, {
             "id": 2, 
             "amount": 30, 
             "project_id": 1, 
             "fundraiser_id": null, 
-            "order_id": 1
+            "order_id": 1,
+            "created": "2014-07-20T20:42:20.315Z"
         }]
 
 # Group Payments
@@ -550,12 +544,16 @@ Payment related resources of the **Donations API**
             "id": 1, 
             "payment_method_id": 1, 
             "order_id": 1, 
-            "status": "closed"
+            "status": "closed",
+            "created": "2014-07-17T20:42:20.315Z",
+            "updated": "2014-07-17T20:42:20.315Z"
         }, {
             "id": 2, 
             "payment_method_id": 1, 
             "order_id": 2, 
-            "status": "pending"
+            "status": "pending",
+            "created": "2014-07-18T20:42:20.315Z",
+            "updated": "2014-07-18T22:42:20.315Z"
         }]
 
 ### Create a Payment [POST]
@@ -565,9 +563,16 @@ Payment related resources of the **Donations API**
 
 + Response 201 (application/json)
 
-        { "id": 3, "payment_method_id": 1, "order_id": 1, "status": "open" }
+        { 
+            "id": 3, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
+            "status": "open",
+            "created": "2014-07-18T20:42:20.315Z",
+            "updated": "2014-07-18T22:42:20.315Z"
+        }
 
-## Orders [/api/payments/{id}]
+## Payments [/api/payments/{id}]
 A single Payment object with all its details
 
 + Parameters
@@ -578,7 +583,14 @@ A single Payment object with all its details
 
     + Body
 
-            { "id": 2, "payment_method_id": 1, "order_id": 2, "status": "pending" }
+            { 
+                "id": 2, 
+                "payment_method_id": 1, 
+                "order_id": 2, 
+                "status": "pending",
+                "created": "2014-07-18T20:42:20.315Z",
+                "updated": "2014-07-18T22:42:20.315Z"
+            }
 
 ### Remove a Payment [DELETE]
 + Response 204
