@@ -595,6 +595,26 @@ A single Payment object with all its details
 ### Remove a Payment [DELETE]
 + Response 204
 
+## Payments [/api/payments/cc-type/{cc_number}]
+A single Payment object with all its details
+
++ Parameters
+    + cc_number (required, number, ``) ... Numeric `cc_number` of the Credit Card number to check. Has example value.
+    
+### Check Payment Method Type [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            { 
+                "id": 2, 
+                "payment_method_id": 1, 
+                "order_id": 2, 
+                "status": "pending",
+                "created": "2014-07-18T20:42:20.315Z",
+                "updated": "2014-07-18T22:42:20.315Z"
+            }
+
 # Group Payment Methods
 Payment Method related resources of the **Donations API**
 
