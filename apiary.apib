@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: https://donations.onepercentclub.com
+HOST: https://onepercentclub.com
 
 # Bluebottle
 Bluebottle API is a the crowdsourcing API framework initiated by the 1%CLUB.
@@ -349,10 +349,27 @@ Orders related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-            "id": 1, "total_amount": 100, "user_id": 1
+            "id": 1, "total_amount": 100, "user_id": 1, "status": "success"
         }, {
-            "id": 2, "total_amount": 50, "user_id": 1
+            "id": 2, "total_amount": 50, "user_id": 1, "status": "success"
         }]
+
+## My Order Collection [/api/orders/my]
+### List all My Orders [GET]
++ Response 200 (application/json)
+
+        [{
+            "id": 1, 
+            "total_amount": 100, 
+            "user_id": 1, 
+            "status": "success"
+        }, {
+            "id": 2, 
+            "total_amount": 50, 
+            "user_id": 1, 
+            "status": "success"
+        }]
+
 
 ### Create an Order [POST]
 + Request (application/json)
@@ -361,9 +378,14 @@ Orders related resources of the **Donations API**
 
 + Response 201 (application/json)
 
-        { "id": 3, "total_amount": 0, "user_id": 1 }
+        { 
+            "id": 3, 
+            "total_amount": 0, 
+            "user_id": 1, 
+            "status": "in_progress" 
+        }
 
-## Order [/api/orders/{id}]
+## Order [/api/orders/my/{id}]
 A single Order object with all its details
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Order to perform action with. Has example value.
@@ -373,8 +395,15 @@ A single Order object with all its details
 
     + Body
 
-            { "id": 2, "total_amount": 50, "user_id": 1 }
+            { 
+                "id": 2, 
+                "total_amount": 50, 
+                "user_id": 1,
+                "status": "success"
+            }
 
+### Remove an Order [DELETE]
++ Response 204
 
 # Group My Donations
 My Donation related resources of the **Donations API**
@@ -402,12 +431,27 @@ My Donation related resources of the **Donations API**
 ### Create a Donation [POST]
 + Request (application/json)
 
-        { "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1 }
+        { 
+            "amount": 30, 
+            "project_id": 1, 
+            "fundraiser_id": null, 
+            "order_id": 1,
+            "user_id": 1,
+        }
 
 + Response 201 (application/json)
 
-        { "id": 3, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1, "status": "open", "created": "2014-07-18T20:42:20.315Z" }
-
+        { 
+            "id": 3, 
+            "amount": 30, 
+            "project_id": 1, 
+            "fundraiser_id": null, 
+            "order_id": 1,
+            "user_id": 1,
+            "status": "open", 
+            "created": "2014-07-18T20:42:20.315Z" 
+        }
+        
 ## My Donations [/api/donations/my/{id}]
 A single My Donation object with all its details
 + Parameters
@@ -418,7 +462,15 @@ A single My Donation object with all its details
 
     + Body
 
-            { "id": 2, "amount": 30, "project_id": null, "fundraiser_id": 1, "order_id": 2, "status": "closed", "created": "2014-07-18T20:42:20.315Z" }
+            { 
+                "id": 2, 
+                "amount": 30, 
+                "project_id": null, 
+                "fundraiser_id": 1, 
+                "order_id": 2, 
+                "status": "closed", 
+                "created": "2014-07-18T20:42:20.315Z" 
+            }
 
 ## My Project Donations Collection [/api/donations/my-projects]
 ### List all My Project Donations [GET]
@@ -571,7 +623,7 @@ Payment related resources of the **Donations API**
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z"
         }
-
+        
 ## Payments [/api/payments/{id}]
 A single Payment object with all its details
 
@@ -595,7 +647,7 @@ A single Payment object with all its details
 ### Remove a Payment [DELETE]
 + Response 204
 
-## Payments [/api/payments/cc-type/{cc_number}]
+## Payment CC-Type [/api/payments/cc-type/{cc_number}]
 A single Payment object with all its details
 
 + Parameters
@@ -615,6 +667,61 @@ A single Payment object with all its details
                 "updated": "2014-07-18T22:42:20.315Z"
             }
 
+# Group My Payments
+Payment related resources of the **Donations API**
+
+## My Payments Collection [/api/payments/my]
+### List all My Payments [GET]
++ Response 200 (application/json)
+
+        [{
+            "id": 1, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
+            "status": "closed",
+            "created": "2014-07-17T20:42:20.315Z",
+            "updated": "2014-07-17T20:42:20.315Z"
+        }, {
+            "id": 2, 
+            "payment_method_id": 1, 
+            "order_id": 2, 
+            "status": "pending",
+            "created": "2014-07-18T20:42:20.315Z",
+            "updated": "2014-07-18T22:42:20.315Z"
+        }]
+
+### Create a Payment [POST]
++ Request (application/json)
+
+        { "payment_method_id": 1, "order_id": 1 }
+
++ Response 201 (application/json)
+
+        { 
+            "id": 3, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
+            "status": "open",
+            "created": "2014-07-18T20:42:20.315Z",
+            "updated": "2014-07-18T22:42:20.315Z"
+        }
+
+## My Payments Collection [/api/payments/my/{payment_id}]
+### Set a Payement to Success [POST]
++ Parameters
+    + payment_id (required, number, `1`) ... Numeric `payment_id` of the Payement to perform action with. Has example value.
+
++ Response 201 (application/json)
+
+        { 
+            "id": 3, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
+            "status": "closed",
+            "created": "2014-07-18T20:42:20.315Z",
+            "updated": "2014-07-18T22:42:20.315Z"
+        }
+        
 # Group Payment Methods
 Payment Method related resources of the **Donations API**
 
@@ -627,11 +734,13 @@ Payment Method related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-            "id": 1, "provider_id": 1, 
+            "id": 1, 
+            "provider_id": 1, 
             "payment_type": "credit_card", 
             "payment_process": "popup"
         }, {
-            "id": 2, "provider_id": 2, 
+            "id": 2, 
+            "provider_id": 2, 
             "payment_type": "paypal", 
             "payment_process": "redirect"
         }]
