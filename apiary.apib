@@ -408,6 +408,66 @@ A single Order object with all its details
 ### Remove an Order [DELETE]
 + Response 204
 
+
+# Group Donations
+Donation (public details) related resources of the **Donations API**
+
+## Donations [/api/donations/{id}]
+A single Donation object with public details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Donation to perform action with. Has example value.
+
+### Retrieve a Donation [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            { 
+                "id": 2, 
+                "amount": 30, 
+                "project_id": 1, 
+                "fundraiser_id": null, 
+                "order_id": 1,
+                "created": "2014-07-18T20:42:20.315Z"
+            }
+
+## Project Donations Collection [/api/donations/project/{project_id}]
+### List all Donations by Project [GET]
++ Parameters
+    + project_id (required, number, `1`) ... Numeric `project_id` of the Donation to perform action with. Has example value.
+
++ Response 200 (application/json)
+
+        [{
+            "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+        }, {
+            "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+        }]
+
+## User Donations Collection [/api/donations/user/{user_id}]
+### List all Donations by User [GET]
++ Parameters
+    + user_id (required, number, `1`) ... Numeric `user_id` of the Donation to perform action with. Has example value.
+
++ Response 200 (application/json)
+
+        [{
+            "id": 1, 
+            "amount": 20, 
+            "project_id": 1, 
+            "fundraiser_id": null, 
+            "order_id": 1,
+            "created": "2014-07-18T20:42:20.315Z"
+        }, {
+            "id": 2, 
+            "amount": 30, 
+            "project_id": 1, 
+            "fundraiser_id": null, 
+            "order_id": 1,
+            "created": "2014-07-20T20:42:20.315Z"
+        }]
+
 # Group My Donations
 My Donation related resources of the **Donations API**
 
@@ -526,66 +586,6 @@ A single My Donation object with all its details
           "id": 1, "fundraiser_id": 1, "amount": 50, "user_id": 1, "order_id": 4, "status": "closed", "created": "2014-07-20T20:42:20.315Z"
         }, {
           "id": 2, "fundraiser_id": 1, "amount": 10, "user_id": 2, "order_id": 5, "status": "pending", "created": "2014-07-20T20:42:20.315Z"
-        }]
-
-
-# Group Donations
-Donation (public details) related resources of the **Donations API**
-
-## Donations [/api/donations/{id}]
-A single Donation object with public details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Donation to perform action with. Has example value.
-
-### Retrieve a Donation [GET]
-+ Response 200 (application/json)
-
-    + Body
-
-            { 
-                "id": 2, 
-                "amount": 30, 
-                "project_id": 1, 
-                "fundraiser_id": null, 
-                "order_id": 1,
-                "created": "2014-07-18T20:42:20.315Z"
-            }
-
-## Project Donations Collection [/api/donations/project/{project_id}]
-### List all Donations by Project [GET]
-+ Parameters
-    + project_id (required, number, `1`) ... Numeric `project_id` of the Donation to perform action with. Has example value.
-
-+ Response 200 (application/json)
-
-        [{
-            "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
-        }, {
-            "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
-        }]
-
-## User Donations Collection [/api/donations/user/{user_id}]
-### List all Donations by User [GET]
-+ Parameters
-    + user_id (required, number, `1`) ... Numeric `user_id` of the Donation to perform action with. Has example value.
-
-+ Response 200 (application/json)
-
-        [{
-            "id": 1, 
-            "amount": 20, 
-            "project_id": 1, 
-            "fundraiser_id": null, 
-            "order_id": 1,
-            "created": "2014-07-18T20:42:20.315Z"
-        }, {
-            "id": 2, 
-            "amount": 30, 
-            "project_id": 1, 
-            "fundraiser_id": null, 
-            "order_id": 1,
-            "created": "2014-07-20T20:42:20.315Z"
         }]
 
 # Group Payments
