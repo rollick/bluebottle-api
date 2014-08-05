@@ -546,6 +546,23 @@ A single My Donation object with all its details
                 "created": "2014-07-18T20:42:20.315Z" 
             }
 
+## My Donations [/api/donations/my/{id}/]
+A single Donation object with all its details
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Order to perform action with. Has example value.
+
+### Retrieve an Order [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            { 
+                "id": 2, 
+                "total_amount": 50, 
+                "user_id": 1,
+                "status": "success"
+            }
+
 ## My Project Donations Collection [/api/donations/my-projects/]
 ### List all My Project Donations [GET]
 + Response 200 (application/json)
@@ -625,14 +642,14 @@ Payment related resources of the **Donations API**
 ### Create a Payment [POST]
 + Request (application/json)
 
-        { "payment_method": 1, "order": 1 }
+        { "payment_method_id": 1, "order_id": 1 }
 
 + Response 201 (application/json)
 
         { 
             "id": 3, 
-            "payment_method": 1, 
-            "order": 1, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
             "status": "open",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z"
@@ -651,8 +668,8 @@ A single Payment object with all its details
 
             { 
                 "id": 2, 
-                "payment_method": 1, 
-                "order": 2, 
+                "payment_method_id": 1, 
+                "order_id": 2, 
                 "status": "pending",
                 "created": "2014-07-18T20:42:20.315Z",
                 "updated": "2014-07-18T22:42:20.315Z"
@@ -690,16 +707,24 @@ Payment related resources of the **Donations API**
 
         [{
             "id": 1, 
-            "payment_method": 1, 
-            "order": 1, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
             "status": "closed",
+            "integration_url": null,
+            "integration_method": null,
+            "integration_payload": null,
+            "integration_type": null,
             "created": "2014-07-17T20:42:20.315Z",
             "updated": "2014-07-17T20:42:20.315Z"
         }, {
             "id": 2, 
-            "payment_method": 1, 
-            "order": 2, 
+            "payment_method_id": 1, 
+            "order_id": 2, 
             "status": "pending",
+            "integration_url": null,
+            "integration_method": null,
+            "integration_payload": null,
+            "integration_type": null,
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z"
         }]
@@ -707,31 +732,39 @@ Payment related resources of the **Donations API**
 ### Create a Payment [POST]
 + Request (application/json)
 
-        { "payment_method": 1, "order": 1 }
+        { "payment_method_id": 1, "order_id": 1 }
 
 + Response 201 (application/json)
 
         { 
             "id": 3, 
-            "payment_method": 1, 
-            "order": 1, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
             "status": "open",
+            "integration_url": "http://localhost:3000/psp-handler",
+            "integration_method": "GET",
+            "integration_payload": null,
+            "integration_type": "redirect",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z"
         }
 
 ## Close a Payment [/api/payments/my/{payment_id}]
-### Set a Payement to Closed [PUT]
+### Mock endpoint to set a Payment to Closed [PUT]
 + Parameters
-    + payment_id (required, number, `1`) ... Numeric `payment_id` of the Payement to perform action with. Has example value.
+    + payment_id (required, number, `1`) ... Numeric `payment_id` of the Payment to perform action with. Has example value.
 
 + Response 201 (application/json)
 
         { 
             "id": 3, 
-            "payment_method": 1, 
-            "order": 1, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
             "status": "closed",
+            "integration_url": null,
+            "integration_method": null,
+            "integration_payload": null,
+            "integration_type": null,
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z"
         }
