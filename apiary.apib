@@ -349,9 +349,17 @@ Orders related resources of the **Donations API**
 + Response 200 (application/json)
 
         [{
-            "id": 1, "total_amount": 100, "user_id": 1, "status": "success"
+            "id": 1, 
+            "total_amount": 100, 
+            "user_id": 1, 
+            "status": "success",
+             "country_id": 1
         }, {
-            "id": 2, "total_amount": 50, "user_id": 1, "status": "success"
+            "id": 2, 
+            "total_amount": 50, 
+            "user_id": 1, 
+            "status": "success",
+             "country_id": 1
         }]
 
 # Group My Orders
@@ -365,12 +373,14 @@ Orders related resources of the **Donations API**
             "id": 1, 
             "total_amount": 100, 
             "user_id": 1, 
-            "status": "success"
+            "status": "success",
+            "country_id": 1
         }, {
             "id": 2, 
             "total_amount": 50, 
             "user_id": 1, 
-            "status": "success"
+            "status": "success",
+            "country_id": 1
         }]
 
 
@@ -385,7 +395,8 @@ Orders related resources of the **Donations API**
             "id": 3, 
             "total_amount": 0, 
             "user_id": 1, 
-            "status": "in_progress" 
+            "status": "in_progress",
+            "country_id": 1
         }
 
 ## My Order [/api/orders/my/{id}/]
