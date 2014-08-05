@@ -690,15 +690,15 @@ Payment related resources of the **Donations API**
 
         [{
             "id": 1, 
-            "payment_method_id": 1, 
-            "order_id": 1, 
+            "payment_method": 1, 
+            "order": 1, 
             "status": "closed",
             "created": "2014-07-17T20:42:20.315Z",
             "updated": "2014-07-17T20:42:20.315Z"
         }, {
             "id": 2, 
-            "payment_method_id": 1, 
-            "order_id": 2, 
+            "payment_method": 1, 
+            "order": 2, 
             "status": "pending",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z"
@@ -707,14 +707,14 @@ Payment related resources of the **Donations API**
 ### Create a Payment [POST]
 + Request (application/json)
 
-        { "payment_method_id": 1, "order_id": 1 }
+        { "payment_method": 1, "order": 1 }
 
 + Response 201 (application/json)
 
         { 
             "id": 3, 
-            "payment_method_id": 1, 
-            "order_id": 1, 
+            "payment_method": 1, 
+            "order": 1, 
             "status": "open",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z"
@@ -729,8 +729,8 @@ Payment related resources of the **Donations API**
 
         { 
             "id": 3, 
-            "payment_method_id": 1, 
-            "order_id": 1, 
+            "payment_method": 1, 
+            "order": 1, 
             "status": "closed",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z"
