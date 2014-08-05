@@ -344,7 +344,7 @@ A single Organization (Manage) object with all its details
 # Group Orders
 Orders related resources of the **Donations API**
 
-## Order  [/api/orders/]
+## Orders  [/api/orders/]
 ### List all Orders [GET]
 + Response 200 (application/json)
 
@@ -363,6 +363,26 @@ Orders related resources of the **Donations API**
             "country": 149,
             "created": "2014-07-18T20:42:20.315Z"
         }]
+
+## Orders [/api/orders/{id}/]
+A single Order object with all its details
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Order to perform action with. Has example value.
+
+### Retrieve an Order [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            { 
+                "id": 2, 
+                "total_amount": 50, 
+                "user": 1,
+                "status": "success",
+                "country": 149,
+                "created": "2014-07-18T20:42:20.315Z"
+            }
+
 
 # Group My Orders
 Orders related resources of the **Donations API**
