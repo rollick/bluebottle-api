@@ -443,17 +443,17 @@ A single Donation object with public details
                 "created": "2014-07-18T20:42:20.315Z"
             }
 
-## Project Donations Collection [/api/donations/project/{project_id}/]
+## Project Donations Collection [/api/donations/project/?project={project_id}]
 ### List all Donations by Project [GET]
 + Parameters
-    + project_id (required, number, `1`) ... Numeric `project_id` of the Donation to perform action with. Has example value.
+    + project_id (optional, number, `1`) ... Numeric `project_id` of the Donation to perform action with. Has example value.
 
 + Response 200 (application/json)
 
         [{
-            "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1
+            "id": 1, "amount": 20, "project_id": 1, "fundraiser_id": null, "order_id": 1, "created": "2014-07-21T18:48:40.440Z"
         }, {
-            "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
+            "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1, "created" "2014-08-01T17:47:10.440Z"
         }]
 
 ## User Donations Collection [/api/donations/user/{user_id}/]
