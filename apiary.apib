@@ -353,13 +353,13 @@ Orders related resources of the **Donations API**
             "total_amount": 100, 
             "user_id": 1, 
             "status": "success",
-             "country": 149
+            "country": 149
         }, {
             "id": 2, 
             "total_amount": 50, 
             "user_id": 1, 
             "status": "success",
-             "country": 149
+            "country": 149
         }]
 
 # Group My Orders
@@ -499,16 +499,16 @@ My Donation related resources of the **Donations API**
         [{
             "id": 1, 
             "amount": 20, 
-            "project": 1,
-            "fundraiser": null, 
-            "order": 1, 
+            "project_id": 1,
+            "fundraiser_id": null, 
+            "order_id": 1, 
             "status": "pending"
         }, {
             "id": 2, 
             "amount": 30, 
-            "project": null, 
-            "fundraiser": 1, 
-            "order": 2, 
+            "project_id": null, 
+            "fundraiser_id": 1, 
+            "order_id": 2, 
             "status": "closed"
         }]
 
@@ -800,8 +800,8 @@ Payment related resources of the **Donations API**
 
         { 
             "id": 3, 
-            "payment_method": 1, 
-            "order": 1, 
+            "payment_method_id": 1, 
+            "order_id": 1, 
             "status": "closed",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z",
