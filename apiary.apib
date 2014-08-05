@@ -467,7 +467,7 @@ A single Donation object with public details
                 "project": 1, 
                 "fundraiser": null, 
                 "order": 1,
-                "created": "2014-07-18T20:42:20.315Z"
+                "created": "2014-07-18T20:42:20.315Z",
             }
 
 ## Project Donations Collection [/api/donations/project/?project={project_id}]
@@ -500,27 +500,82 @@ A single Donation object with public details
                 }, 
         }]
 
-## User Donations Collection [/api/donations/user/{user_id}/]
+## User Donations Collection [/api/donations/user/?user={user_id}]
 ### List all Donations by User [GET]
 + Parameters
-    + user_id (required, number, `1`) ... Numeric `user_id` of the Donation to perform action with. Has example value.
+    + user_id (optional, number, `1`) ... Numeric `user_id` of the Donation to perform action with. Has example value.
 
 + Response 200 (application/json)
 
         [{
             "id": 1, 
             "amount": 20, 
-            "project": 1, 
             "fundraiser": null, 
             "order": 1,
-            "created": "2014-07-18T20:42:20.315Z"
+            "created": "2014-07-18T20:42:20.315Z",
+            "project": {
+                "id": "luluinmagu", 
+                "title": "Luluinmagu", 
+                "image": "http://onepercentclub.com/static/media/cache/c6/61/c661be75e95b6b6829c5b7df1e17446f.jpg", 
+                "status": 5, 
+                "pitch": "I need funds to build a clinic in the Magu District of Tanzania (East Africa). I'm Lulu. If you'd like a more detailed account of this project please visit www.luluinmagu.com.\r\n\r\n ", 
+                "country": {
+                    "id": 229, 
+                    "name": "Tanzania", 
+                    "subregion": "Eastern Africa"
+                }, 
+                "task_count": 0, 
+                "is_campaign": false, 
+                "amount_asked": "11000.00", 
+                "amount_donated": "12256.00", 
+                "amount_needed": "0.00", 
+                "deadline": "2014-09-03T15:10:44Z", 
+                "owner": {
+                    "id": 22950, 
+                    "first_name": "Louise ", 
+                    "last_name": "Seeto", 
+                    "username": "louiseseeto", 
+                    "avatar": "http://onepercentclub.com/static/media/cache/0e/ef/0eef5341ae476d32ba01f646e558646f.jpg", 
+                    "full_name": "Louise  Seeto", 
+                    "short_name": "Louise "
+                }, 
+                "partner": null
+            }            
         }, {
             "id": 2, 
             "amount": 30, 
             "project": 1, 
             "fundraiser": null, 
             "order": 1,
-            "created": "2014-07-20T20:42:20.315Z"
+            "created": "2014-07-20T20:42:20.315Z",
+            "project": {
+                "id": "luluinmagu", 
+                "title": "Luluinmagu", 
+                "image": "http://onepercentclub.com/static/media/cache/c6/61/c661be75e95b6b6829c5b7df1e17446f.jpg", 
+                "status": 5, 
+                "pitch": "I need funds to build a clinic in the Magu District of Tanzania (East Africa). I'm Lulu. If you'd like a more detailed account of this project please visit www.luluinmagu.com.\r\n\r\n ", 
+                "country": {
+                    "id": 229, 
+                    "name": "Tanzania", 
+                    "subregion": "Eastern Africa"
+                }, 
+                "task_count": 0, 
+                "is_campaign": false, 
+                "amount_asked": "11000.00", 
+                "amount_donated": "12256.00", 
+                "amount_needed": "0.00", 
+                "deadline": "2014-09-03T15:10:44Z", 
+                "owner": {
+                    "id": 22950, 
+                    "first_name": "Louise ", 
+                    "last_name": "Seeto", 
+                    "username": "louiseseeto", 
+                    "avatar": "http://onepercentclub.com/static/media/cache/0e/ef/0eef5341ae476d32ba01f646e558646f.jpg", 
+                    "full_name": "Louise  Seeto", 
+                    "short_name": "Louise "
+                }, 
+                "partner": null
+            }            
         }]
 
 # Group My Donations
