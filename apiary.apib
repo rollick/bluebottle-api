@@ -958,26 +958,30 @@ Payment related resources of the **Donations API**
             "closed": null
         }
 
-## Close a Payment [/api/payments/my/{payment_id}]
-### Set a Payement to Closed [PUT]
+## My Payments [/api/payments/my/{payment_id}]
+A single Payment object with all its details
+
 + Parameters
-    + payment_id (required, number, `1`) ... Numeric `payment_id` of the Payement to perform action with. Has example value.
+    + payment_id (required, number, `1`) ... Numeric `payment_id` of the Payment to perform action with. Has example value.
 
-+ Response 201 (application/json)
+### Retrieve a Payment [GET]
++ Response 200 (application/json)
 
-        { 
-            "id": 3, 
-            "payment_method": 1, 
-            "order": 1, 
-            "status": "closed",
-            "integration_url": null,
-            "integration_method": null,
-            "integration_payload": null,
-            "integration_type": null,
-            "created": "2014-07-18T20:42:20.315Z",
-            "updated": "2014-07-18T22:42:20.315Z",
-            "closed": null
-        }
+    + Body
+
+            { 
+                "id": 2, 
+                "payment_method": 1, 
+                "order": 2, 
+                "status": "pending",
+                "integration_url": null,
+                "integration_method": null,
+                "integration_payload": null,
+                "integration_type": null,
+                "created": "2014-07-18T20:42:20.315Z",
+                "updated": "2014-07-18T22:42:20.315Z",
+                "closed": null
+            }
         
 # Group Payment Methods
 Payment Method related resources of the **Donations API**
