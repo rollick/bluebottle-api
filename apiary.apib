@@ -7,7 +7,7 @@ Bluebottle API is a the crowdsourcing API framework initiated by the 1%CLUB.
 # Group Tasks
 Tasks related resources of the **Bluebottle API**
 
-## Tasks Collection [/api/bb_tasks]
+## Tasks Collection [/api/bb_tasks/]
 
 ### List all Tasks [GET]
 + Response 200 (application/json)
@@ -149,7 +149,7 @@ A single Task object with all its details
 # Group Projects
 Projects related resources of the **Bluebottle API**
 
-## Projects Collection [/api/bb_projects]
+## Projects Collection [/api/bb_projects/]
 
 ### List all Projects [GET]
 + Response 200 (application/json)
@@ -193,7 +193,7 @@ A single Project object with all its details
 # Group Organizations
 Organizations related resources of the **Bluebottle API**
 
-## Organizations Collection [/api/bb_organizations]
+## Organizations Collection [/api/bb_organizations/]
 
 ### List all Organizations [GET]
 + Response 200 (application/json)
@@ -234,7 +234,7 @@ A single Organization object with all its details
 ### Remove a Organization [DELETE]
 + Response 204
 
-## Organization Documents Collection [/api/bb_organizations/documents/manage/{?organization}]
+## Organization Documents  [/api/bb_organizations/documents/manage/{?organization}]
 
 + Parameters
     + organization (required, number, `1`) ... Numeric `organization` id of the Organization to perform action with. Has example value.
@@ -344,7 +344,7 @@ A single Organization (Manage) object with all its details
 # Group Orders
 Orders related resources of the **Donations API**
 
-## Order Collection [/api/orders]
+## Order  [/api/orders/]
 ### List all Orders [GET]
 + Response 200 (application/json)
 
@@ -353,13 +353,13 @@ Orders related resources of the **Donations API**
             "total_amount": 100, 
             "user_id": 1, 
             "status": "success",
-             "country_id": 1
+             "country": 149
         }, {
             "id": 2, 
             "total_amount": 50, 
             "user_id": 1, 
             "status": "success",
-             "country_id": 1
+             "country": 149
         }]
 
 # Group My Orders
@@ -374,13 +374,13 @@ Orders related resources of the **Donations API**
             "total_amount": 100, 
             "user_id": 1, 
             "status": "success",
-            "country_id": 1
+            "country": 1
         }, {
             "id": 2, 
             "total_amount": 50, 
             "user_id": 1, 
             "status": "success",
-            "country_id": 1
+            "country": 149
         }]
 
 
@@ -396,7 +396,7 @@ Orders related resources of the **Donations API**
             "total_amount": 0, 
             "user_id": 1, 
             "status": "in_progress",
-            "country_id": 1
+            "country": 149
         }
 
 ## My Order [/api/orders/my/{id}/]
@@ -443,7 +443,7 @@ A single Donation object with public details
                 "created": "2014-07-18T20:42:20.315Z"
             }
 
-## Project Donations Collection [/api/donations/project/{project_id}]
+## Project Donations Collection [/api/donations/project/{project_id}/]
 ### List all Donations by Project [GET]
 + Parameters
     + project_id (required, number, `1`) ... Numeric `project_id` of the Donation to perform action with. Has example value.
@@ -456,7 +456,7 @@ A single Donation object with public details
             "id": 2, "amount": 30, "project_id": 1, "fundraiser_id": null, "order_id": 1
         }]
 
-## User Donations Collection [/api/donations/user/{user_id}]
+## User Donations Collection [/api/donations/user/{user_id}/]
 ### List all Donations by User [GET]
 + Parameters
     + user_id (required, number, `1`) ... Numeric `user_id` of the Donation to perform action with. Has example value.
@@ -482,7 +482,7 @@ A single Donation object with public details
 # Group My Donations
 My Donation related resources of the **Donations API**
 
-## My Donation Collection [/api/donations/my]
+## My Donation Collection [/api/donations/my/]
 ### List all My Donations [GET]
 + Response 200 (application/json)
 
@@ -546,7 +546,7 @@ A single My Donation object with all its details
                 "created": "2014-07-18T20:42:20.315Z" 
             }
 
-## My Project Donations Collection [/api/donations/my-projects]
+## My Project Donations Collection [/api/donations/my-projects/]
 ### List all My Project Donations [GET]
 + Response 200 (application/json)
 
@@ -558,7 +558,7 @@ A single My Donation object with all its details
             "id": 2, "project_id": 2, "amount": 30, "user_id": 2, "order_id": 3, "status": "closed", "created": "2014-07-20T20:42:20.315Z"
         }]
 
-## My Project Donations [/api/donations/my-projects/{project_id}]
+## My Project Donations [/api/donations/my-projects/{project_id}/]
 + Parameters
     + project_id (required, number, `1`) ... Numeric `project_id` of the My Donation to perform action with. Has example value.
 
@@ -574,7 +574,7 @@ A single My Donation object with all its details
             }]
 
 
-## My Fundraiser Donations Collection [/api/donations/my-fundraisers]
+## My Fundraiser Donations Collection [/api/donations/my-fundraisers/]
 ### List all My Fundraiser Donations [GET]
 + Response 200 (application/json)
 
@@ -586,7 +586,7 @@ A single My Donation object with all its details
             "id": 2, "fundraiser_id": 2, "amount": 30, "user_id": 2, "order_id": 6, "status": "closed", "created": "2014-07-22T20:42:20.315Z"
         }]
 
-## My Fundraiser Donations [/api/donations/my-fundraisers/{fundraiser_id}]
+## My Fundraiser Donations [/api/donations/my-fundraisers/{fundraiser_id}/]
 + Parameters
     + fundraiser_id (required, number, `1`) ... Numeric `fundraiser_id` of the My Donation to perform action with. Has example value.
 
@@ -602,7 +602,7 @@ A single My Donation object with all its details
 # Group Payments
 Payment related resources of the **Donations API**
 
-## Payments Collection [/api/payments]
+## Payments Collection [/api/payments/]
 ### List all Payments [GET]
 + Response 200 (application/json)
 
@@ -684,7 +684,7 @@ A single Payment object with all its details
 # Group My Payments
 Payment related resources of the **Donations API**
 
-## My Payments Collection [/api/payments/my]
+## My Payments Collection [/api/payments/my/]
 ### List all My Payments [GET]
 + Response 200 (application/json)
 
@@ -739,7 +739,7 @@ Payment related resources of the **Donations API**
 # Group Payment Methods
 Payment Method related resources of the **Donations API**
 
-## Payment Methods Collection [/api/payment-methods?amount={amount}&country={country_code}]
+## Payment Methods  [/api/payment-methods?amount={amount}&country={country_code}]
 + Parameters
     + amount (required, number, `50`) ... Numeric `amount` of the payment total amount.
     + country (required, string, `nl`) ... String `country_code` of two character country code for the current user.
