@@ -351,15 +351,15 @@ Orders related resources of the **Donations API**
         [{
             "id": 1, 
             "total_amount": 100, 
-            "user_id": 1, 
+            "user": 1, 
             "status": "success",
-            "country_id": 149
+            "country": 149
         }, {
             "id": 2, 
             "total_amount": 50, 
-            "user_id": 1, 
+            "user": 1, 
             "status": "success",
-            "country_id": 149
+            "country": 149
         }]
 
 # Group My Orders
@@ -372,15 +372,15 @@ Orders related resources of the **Donations API**
         [{
             "id": 1, 
             "total_amount": 100, 
-            "user_id": 1, 
+            "user": 1, 
             "status": "success",
-            "country_id": 1
+            "country": 1
         }, {
             "id": 2, 
             "total_amount": 50, 
-            "user_id": 1, 
+            "user": 1, 
             "status": "success",
-            "country_id": 149
+            "country": 149
         }]
 
 
@@ -394,7 +394,7 @@ Orders related resources of the **Donations API**
         { 
             "id": 3, 
             "total_amount": 0, 
-            "user_id": 1, 
+            "user": 1, 
             "status": "in_progress",
             "country_id": 149
         }
@@ -438,9 +438,9 @@ A single Donation object with public details
             { 
                 "id": 2, 
                 "amount": 30, 
-                "project_id": 1, 
-                "fundraiser_id": null, 
-                "order_id": 1,
+                "project": 1, 
+                "fundraiser": null, 
+                "order": 1,
                 "created": "2014-07-18T20:42:20.315Z"
             }
 
@@ -454,16 +454,16 @@ A single Donation object with public details
         [{
             "id": 1, 
             "amount": 20, 
-            "project_id": 1, 
-            "fundraiser_id": null, 
-            "order_id": 1,
+            "project": 1, 
+            "fundraiser": null, 
+            "order": 1,
             "created": "2014-07-21T18:48:40.440Z"
         }, {
             "id": 2, 
             "amount": 30, 
-            "project_id": 1, 
-            "fundraiser_id": null, 
-            "order_id": 1,
+            "project": 1, 
+            "fundraiser": null, 
+            "order": 1,
             "created": "2014-07-21T18:48:40.440Z"
         }]
 
@@ -477,16 +477,16 @@ A single Donation object with public details
         [{
             "id": 1, 
             "amount": 20, 
-            "project_id": 1, 
-            "fundraiser_id": null, 
-            "order_id": 1,
+            "project": 1, 
+            "fundraiser": null, 
+            "order": 1,
             "created": "2014-07-18T20:42:20.315Z"
         }, {
             "id": 2, 
             "amount": 30, 
-            "project_id": 1, 
-            "fundraiser_id": null, 
-            "order_id": 1,
+            "project": 1, 
+            "fundraiser": null, 
+            "order": 1,
             "created": "2014-07-20T20:42:20.315Z"
         }]
 
@@ -500,18 +500,18 @@ My Donation related resources of the **Donations API**
         [{
             "id": 1, 
             "amount": 20, 
-            "project_id": 1,
-            "fundraiser_id": null, 
-            "order_id": 1, 
-            "user_id": 1,
+            "project": 1,
+            "fundraiser": null, 
+            "order": 1, 
+            "user": 1,
             "status": "pending"
         }, {
             "id": 2, 
             "amount": 30, 
-            "project_id": null, 
-            "fundraiser_id": 1, 
-            "order_id": 2, 
-            "user_id": 1,
+            "project": null, 
+            "fundraiser": 1, 
+            "order": 2, 
+            "user": 1,
             "status": "closed"
         }]
 
@@ -520,9 +520,9 @@ My Donation related resources of the **Donations API**
 
         { 
             "amount": 30, 
-            "project_id": 1, 
-            "fundraiser_id": null, 
-            "order_id": 1,
+            "project": 1, 
+            "fundraiser": null, 
+            "order": 1,
             "user_id": 1,
         }
 
@@ -531,9 +531,9 @@ My Donation related resources of the **Donations API**
         { 
             "id": 3, 
             "amount": 30, 
-            "project_id": 1, 
-            "fundraiser_id": null, 
-            "order_id": 1,
+            "project": 1, 
+            "fundraiser": null, 
+            "order": 1,
             "user_id": 1,
             "status": "open", 
             "created": "2014-07-18T20:42:20.315Z" 
@@ -552,11 +552,11 @@ A single My Donation object with all its details
             { 
                 "id": 2, 
                 "amount": 30, 
-                "project_id": null, 
-                "fundraiser_id": 1, 
-                "order_id": 2, 
+                "project": null, 
+                "fundraiser": 1, 
+                "order": 2, 
                 "status": "closed",
-                "user_id": 1,
+                "user": 1,
                 "created": "2014-07-18T20:42:20.315Z" 
             }
 
@@ -566,26 +566,26 @@ A single My Donation object with all its details
 
         [{
             "id": 1, 
-            "project_id": 1, 
+            "project": 1, 
             "amount": 20, 
-            "user_id": 1, 
-            "order_id": 1, 
+            "user": 1, 
+            "order": 1, 
             "status": "closed", 
             "created": "2014-07-18T20:42:20.315Z"
         }, {
             "id": 2, 
-            "project_id": 1, 
+            "project": 1, 
             "amount": 30, 
-            "user_id": 2, 
-            "order_id": 2, 
+            "user": 2, 
+            "order": 2, 
             "status": "pending", 
             "created": "2014-07-20T20:42:20.315Z"
         }, {
             "id": 2, 
-            "project_id": 2, 
+            "project": 2, 
             "amount": 30, 
-            "user_id": 2, 
-            "order_id": 3, 
+            "user": 2, 
+            "order": 3, 
             "status": "closed", 
             "created": "2014-07-20T20:42:20.315Z"
         }]
@@ -601,10 +601,10 @@ A single My Donation object with all its details
 
             [{
                 "id": 1, 
-                "project_id": 1,
+                "project": 1,
                 "amount": 50, 
-                "user_id": 1, 
-                "order_id": 1, 
+                "user": 1, 
+                "order": 1, 
                 "status": "closed", 
                 "created": "2014-07-18T20:42:20.315Z"
             }, {
@@ -624,26 +624,26 @@ A single My Donation object with all its details
 
         [{
             "id": 1, 
-            "fundraiser_id": 1, 
+            "fundraiser": 1, 
             "amount": 20, 
-            "user_id": 1, 
-            "order_id": 4, 
+            "user": 1, 
+            "order": 4, 
             "status": "closed", 
             "created": "2014-07-18T20:42:20.315Z"
         }, {
             "id": 2, 
-            "fundraiser_id": 1, 
+            "fundraiser": 1, 
             "amount": 30, 
-            "user_id": 2, 
-            "order_id": 5, 
+            "user": 2, 
+            "order": 5, 
             "status": "pending", 
             "created": "2014-07-20T20:42:20.315Z"
         }, {
             "id": 2, 
-            "fundraiser_id": 2, 
+            "fundraiser": 2, 
             "amount": 30, 
-            "user_id": 2, 
-            "order_id": 6, 
+            "user": 2, 
+            "order": 6, 
             "status": "closed", 
             "created": "2014-07-22T20:42:20.315Z"
         }]
@@ -657,18 +657,18 @@ A single My Donation object with all its details
 
         [{
           "id": 1, 
-          "fundraiser_id": 1, 
+          "fundraiser": 1, 
           "amount": 50, 
-          "user_id": 1, 
-          "order_id": 4, 
+          "user": 1, 
+          "order": 4, 
           "status": "closed", 
           "created": "2014-07-20T20:42:20.315Z"
         }, {
           "id": 2, 
-          "fundraiser_id": 1, 
+          "fundraiser": 1, 
           "amount": 10, 
-          "user_id": 2, 
-          "order_id": 5, 
+          "user": 2, 
+          "order": 5, 
           "status": "pending", 
           "created": "2014-07-20T20:42:20.315Z"
         }]
@@ -682,16 +682,16 @@ Payment related resources of the **Donations API**
 
         [{
             "id": 1, 
-            "payment_method_id": 1, 
-            "order_id": 1, 
+            "payment_method": 1, 
+            "order": 1, 
             "status": "closed",
             "created": "2014-07-17T20:42:20.315Z",
             "updated": "2014-07-17T20:42:20.315Z",
             "closed": null
         }, {
             "id": 2, 
-            "payment_method_id": 1, 
-            "order_id": 2, 
+            "payment_method": 1, 
+            "order": 2, 
             "status": "pending",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z",
@@ -707,8 +707,8 @@ Payment related resources of the **Donations API**
 
         { 
             "id": 3, 
-            "payment_method_id": 1, 
-            "order_id": 1, 
+            "payment_method": 1, 
+            "order": 1, 
             "status": "open",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z",
@@ -728,8 +728,8 @@ A single Payment object with all its details
 
             { 
                 "id": 2, 
-                "payment_method_id": 1, 
-                "order_id": 2, 
+                "payment_method": 1, 
+                "order": 2, 
                 "status": "pending",
                 "created": "2014-07-18T20:42:20.315Z",
                 "updated": "2014-07-18T22:42:20.315Z",
@@ -762,16 +762,16 @@ Payment related resources of the **Donations API**
 
         [{
             "id": 1, 
-            "payment_method_id": 1, 
-            "order_id": 1, 
+            "payment_method": 1, 
+            "order": 1, 
             "status": "closed",
             "created": "2014-07-17T20:42:20.315Z",
             "updated": "2014-07-17T20:42:20.315Z",
             "closed": null
         }, {
             "id": 2, 
-            "payment_method_id": 1, 
-            "order_id": 2, 
+            "payment_method": 1, 
+            "order": 2, 
             "status": "pending",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z",
@@ -787,8 +787,8 @@ Payment related resources of the **Donations API**
 
         { 
             "id": 3, 
-            "payment_method_id": 1, 
-            "order_id": 1, 
+            "payment_method": 1, 
+            "order": 1, 
             "status": "open",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z",
@@ -804,8 +804,8 @@ Payment related resources of the **Donations API**
 
         { 
             "id": 3, 
-            "payment_method_id": 1, 
-            "order_id": 1, 
+            "payment_method": 1, 
+            "order": 1, 
             "status": "closed",
             "created": "2014-07-18T20:42:20.315Z",
             "updated": "2014-07-18T22:42:20.315Z",
