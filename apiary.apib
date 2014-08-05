@@ -673,12 +673,6 @@ A single Payment object with all its details
     + Body
 
             { 
-                "id": 2, 
-                "payment_method_id": 1, 
-                "order_id": 2, 
-                "status": "pending",
-                "created": "2014-07-18T20:42:20.315Z",
-                "updated": "2014-07-18T22:42:20.315Z"
             }
 
 # Group My Payments
@@ -694,14 +688,16 @@ Payment related resources of the **Donations API**
             "order": 1, 
             "status": "closed",
             "created": "2014-07-17T20:42:20.315Z",
-            "updated": "2014-07-17T20:42:20.315Z"
+            "updated": "2014-07-17T20:42:20.315Z",
+            "closed": null
         }, {
             "id": 2, 
             "payment_method": 1, 
             "order": 2, 
             "status": "pending",
             "created": "2014-07-18T20:42:20.315Z",
-            "updated": "2014-07-18T22:42:20.315Z"
+            "updated": "2014-07-18T22:42:20.315Z",
+            "closed": null
         }]
 
 ### Create a Payment [POST]
@@ -717,7 +713,8 @@ Payment related resources of the **Donations API**
             "order": 1, 
             "status": "open",
             "created": "2014-07-18T20:42:20.315Z",
-            "updated": "2014-07-18T22:42:20.315Z"
+            "updated": "2014-07-18T22:42:20.315Z",
+            "closed": null
         }
 
 ## Close a Payment [/api/payments/my/{payment_id}]
@@ -733,7 +730,8 @@ Payment related resources of the **Donations API**
             "order": 1, 
             "status": "closed",
             "created": "2014-07-18T20:42:20.315Z",
-            "updated": "2014-07-18T22:42:20.315Z"
+            "updated": "2014-07-18T22:42:20.315Z",
+            "closed": null
         }
         
 # Group Payment Methods
