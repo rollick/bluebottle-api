@@ -353,13 +353,15 @@ Orders related resources of the **Donations API**
             "total_amount": 100, 
             "user": 1, 
             "status": "success",
-            "country": 149
+            "country": 149,
+            "created": "2014-07-18T20:42:20.315Z"
         }, {
             "id": 2, 
             "total_amount": 50, 
             "user": 1, 
             "status": "success",
-            "country": 149
+            "country": 149,
+            "created": "2014-07-18T20:42:20.315Z"
         }]
 
 # Group My Orders
@@ -374,13 +376,15 @@ Orders related resources of the **Donations API**
             "total_amount": 100, 
             "user": 1, 
             "status": "success",
-            "country": 1
+            "country": 1,
+            "created": "2014-07-18T20:42:20.315Z"
         }, {
             "id": 2, 
             "total_amount": 50, 
             "user": 1, 
             "status": "success",
-            "country": 149
+            "country": 149,
+            "created": "2014-07-18T20:42:20.315Z"
         }]
 
 
@@ -396,7 +400,8 @@ Orders related resources of the **Donations API**
             "total_amount": 0, 
             "user": 1, 
             "status": "in_progress",
-            "country_id": 149
+            "country_id": 149,
+            "created": "2014-07-18T20:42:20.315Z"
         }
 
 ## My Order [/api/orders/my/{id}/]
@@ -414,7 +419,8 @@ A single Order object with all its details
                 "total_amount": 50, 
                 "user": 1,
                 "status": "success",
-                "country": 149
+                "country": 149,
+                "created": "2014-07-18T20:42:20.315Z"
             }
 
 ### Remove an Order [DELETE]
@@ -504,7 +510,8 @@ My Donation related resources of the **Donations API**
             "fundraiser": null, 
             "order": 1, 
             "user": 1,
-            "status": "pending"
+            "status": "pending",
+            "created": "2014-07-18T20:42:20.315Z"
         }, {
             "id": 2, 
             "amount": 30, 
@@ -512,7 +519,8 @@ My Donation related resources of the **Donations API**
             "fundraiser": 1, 
             "order": 2, 
             "user": 1,
-            "status": "closed"
+            "status": "closed",
+            "created": "2014-07-18T20:42:20.315Z"
         }]
 
 ### Create a Donation [POST]
@@ -523,7 +531,7 @@ My Donation related resources of the **Donations API**
             "project": 1, 
             "fundraiser": null, 
             "order": 1,
-            "user_id": 1,
+            "user_id": 1
         }
 
 + Response 201 (application/json)
