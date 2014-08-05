@@ -476,35 +476,36 @@ A single Donation object with public details
     + project_id (optional, number, `1`) ... Numeric `project_id` of the Donation to perform action with. Has example value.
 
 + Response 200 (application/json)
-    {
-        "count": 2,
-        "next": null,
-        "previous": null,
-        "results": [
-            {
-                "id": 1, 
-                "amount": 20, 
-                "project": 1, 
-                "fundraiser": null, 
-                "order": 1,
-                "created": "2014-07-21T18:48:40.440Z",
-                "user": null
-            }, {
-                "id": 2, 
-                "amount": 30, 
-                "project": 1, 
-                "fundraiser": null, 
-                "order": 1,
-                "created": "2014-07-21T18:48:40.440Z",
-                "user": {
-                    "id": 22950, 
-                    "avatar": "http://onepercentclub.com/static/media/cache/0e/ef/0eef5341ae476d32ba01f646e558646f.jpg", 
-                    "full_name": "Louise  Seeto", 
-                    "short_name": "Louise "
+
+        {
+            "count": 2,
+            "next": null,
+            "previous": null,
+            "results": [
+                {
+                    "id": 1, 
+                    "amount": 20, 
+                    "project": 1, 
+                    "fundraiser": null, 
+                    "order": 1,
+                    "created": "2014-07-21T18:48:40.440Z",
+                    "user": null
+                }, {
+                    "id": 2, 
+                    "amount": 30, 
+                    "project": 1, 
+                    "fundraiser": null, 
+                    "order": 1,
+                    "created": "2014-07-21T18:48:40.440Z",
+                    "user": {
+                        "id": 22950, 
+                        "avatar": "http://onepercentclub.com/static/media/cache/0e/ef/0eef5341ae476d32ba01f646e558646f.jpg", 
+                        "full_name": "Louise  Seeto", 
+                        "short_name": "Louise "
+                    }
                 }
-            }
-        ]
-    }
+            ]
+        }
 
 
 ## User Donations Collection [/api/donations/user/?user={user_id}]
