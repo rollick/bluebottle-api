@@ -747,14 +747,66 @@ Payment Method related resources of the **Donations API**
 ### List all PaymentMethods [GET]
 + Response 200 (application/json)
 
-        [{
-            "id": 1, 
-            "provider_id": 1, 
-            "payment_type": "credit_card", 
-            "payment_process": "popup"
-        }, {
-            "id": 2, 
-            "provider_id": 2, 
-            "payment_type": "paypal", 
-            "payment_process": "redirect"
-        }]
+        {
+            "country": "NL", 
+            "results": [
+                {
+                    "profile": "ideal", 
+                    "restricted_countries": [
+                        "NL"
+                    ], 
+                    "name": "iDEAL", 
+                    "supports_recurring": false, 
+                    "provider": "docdata", 
+                    "id": "ideal"
+                }, 
+                {
+                    "profile": "directdebit", 
+                    "restricted_countries": [
+                        "NL"
+                    ], 
+                    "name": "Direct Debit", 
+                    "provider": "docdata", 
+                    "supports_single": false, 
+                    "max_amount": 10000, 
+                    "id": "direct-debit", 
+                    "supports_recurring": true
+                }, 
+                {
+                    "profile": "creditcard", 
+                    "supports_recurring": false, 
+                    "id": "creditcard", 
+                    "name": "Credit Cards", 
+                    "provider": "docdata"
+                }, 
+                {
+                    "profile": "webmenu", 
+                    "supports_recurring": true, 
+                    "id": "webmenu", 
+                    "name": "Web Menu", 
+                    "provider": "docdata"
+                }, 
+                {
+                    "profile": "ideal", 
+                    "restricted_countries": [
+                        "NL"
+                    ], 
+                    "name": "iDEAL", 
+                    "supports_recurring": false, 
+                    "provider": "adyen"
+                }, 
+                {
+                    "profile": "paypal", 
+                    "supports_single": false, 
+                    "max_amount": 1000, 
+                    "name": "PayPal", 
+                    "provider": "adyen"
+                }, 
+                {
+                    "profile": "mastercard", 
+                    "name": "MasterCard", 
+                    "supports_recurring": false, 
+                    "provider": "adyen"
+                }
+            ]
+        }
