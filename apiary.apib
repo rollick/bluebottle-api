@@ -592,87 +592,88 @@ My Donation related resources of the **Donations API**
 ## My Donation Collection [/api/donations/my/]
 ### List all My Donations [GET]
 + Response 200 (application/json)
-{
-    "count": 2,
-    "next": null,
-    "previous": null,
-    "results": [
+
         {
-            "id": 1,
-            "amount": 20,
-            "fundraiser": null,
-            "order": 1,
-            "user": 1,
-            "status": "pending",
-            "created": "2014-07-18T20:42:20.315Z",
-            "project": {
-                "id": "booking-cares-the-next-development-steps",
-                "title": "Code for Cares",
-                "image": "http://onepercentclub.com/static/media/cache/c6/61/c661be75e95b6b6829c5b7df1e17446f.jpg",
-                "status": 5,
-                "pitch": "I need funds to build a clinic in the Magu District of Tanzania (East Africa). I'm Lulu. If you'd like a more detailed account of this project please visit www.luluinmagu.com.\r\n\r\n ",
-                "country": {
-                    "id": 229,
-                    "name": "Tanzania",
-                    "subregion": "Eastern Africa"
+            "count": 2,
+            "next": null,
+            "previous": null,
+            "results": [
+                {
+                    "id": 1,
+                    "amount": 20,
+                    "fundraiser": null,
+                    "order": 1,
+                    "user": 1,
+                    "status": "pending",
+                    "created": "2014-07-18T20:42:20.315Z",
+                    "project": {
+                        "id": "booking-cares-the-next-development-steps",
+                        "title": "Code for Cares",
+                        "image": "http://onepercentclub.com/static/media/cache/c6/61/c661be75e95b6b6829c5b7df1e17446f.jpg",
+                        "status": 5,
+                        "pitch": "I need funds to build a clinic in the Magu District of Tanzania (East Africa). I'm Lulu. If you'd like a more detailed account of this project please visit www.luluinmagu.com.\r\n\r\n ",
+                        "country": {
+                            "id": 229,
+                            "name": "Tanzania",
+                            "subregion": "Eastern Africa"
+                        },
+                        "task_count": 0,
+                        "is_campaign": false,
+                        "amount_asked": "11000.00",
+                        "amount_donated": "12256.00",
+                        "amount_needed": "0.00",
+                        "deadline": "2014-09-03T15:10:44Z",
+                        "owner": {
+                            "id": 22950,
+                            "first_name": "Louise ",
+                            "last_name": "Seeto",
+                            "username": "louiseseeto",
+                            "avatar": "http://onepercentclub.com/static/media/cache/0e/ef/0eef5341ae476d32ba01f646e558646f.jpg",
+                            "full_name": "Louise  Seeto",
+                            "short_name": "Louise "
+                        },
+                        "partner": null
+                    }
                 },
-                "task_count": 0,
-                "is_campaign": false,
-                "amount_asked": "11000.00",
-                "amount_donated": "12256.00",
-                "amount_needed": "0.00",
-                "deadline": "2014-09-03T15:10:44Z",
-                "owner": {
-                    "id": 22950,
-                    "first_name": "Louise ",
-                    "last_name": "Seeto",
-                    "username": "louiseseeto",
-                    "avatar": "http://onepercentclub.com/static/media/cache/0e/ef/0eef5341ae476d32ba01f646e558646f.jpg",
-                    "full_name": "Louise  Seeto",
-                    "short_name": "Louise "
-                },
-                "partner": null
-            }
-        },
-        {
-            "id": 2,
-            "amount": 30,
-            "fundraiser": 1,
-            "order": 2,
-            "user": 1,
-            "status": "closed",
-            "created": "2014-07-18T20:42:20.315Z",
-            "project": {
-                "id": "booking-cares-the-next-development-steps",
-                "title": "Code for Cares",
-                "image": "http://onepercentclub.com/static/media/cache/c6/61/c661be75e95b6b6829c5b7df1e17446f.jpg",
-                "status": 5,
-                "pitch": "I need funds to build a clinic in the Magu District of Tanzania (East Africa). I'm Lulu. If you'd like a more detailed account of this project please visit www.luluinmagu.com.\r\n\r\n ",
-                "country": {
-                    "id": 229,
-                    "name": "Tanzania",
-                    "subregion": "Eastern Africa"
-                },
-                "task_count": 0,
-                "is_campaign": false,
-                "amount_asked": "11000.00",
-                "amount_donated": "12256.00",
-                "amount_needed": "0.00",
-                "deadline": "2014-09-03T15:10:44Z",
-                "owner": {
-                    "id": 22950,
-                    "first_name": "Louise ",
-                    "last_name": "Seeto",
-                    "username": "louiseseeto",
-                    "avatar": "http://onepercentclub.com/static/media/cache/0e/ef/0eef5341ae476d32ba01f646e558646f.jpg",
-                    "full_name": "Louise  Seeto",
-                    "short_name": "Louise "
-                },
-                "partner": null
-            }
+                {
+                    "id": 2,
+                    "amount": 30,
+                    "fundraiser": 1,
+                    "order": 2,
+                    "user": 1,
+                    "status": "closed",
+                    "created": "2014-07-18T20:42:20.315Z",
+                    "project": {
+                        "id": "booking-cares-the-next-development-steps",
+                        "title": "Code for Cares",
+                        "image": "http://onepercentclub.com/static/media/cache/c6/61/c661be75e95b6b6829c5b7df1e17446f.jpg",
+                        "status": 5,
+                        "pitch": "I need funds to build a clinic in the Magu District of Tanzania (East Africa). I'm Lulu. If you'd like a more detailed account of this project please visit www.luluinmagu.com.\r\n\r\n ",
+                        "country": {
+                            "id": 229,
+                            "name": "Tanzania",
+                            "subregion": "Eastern Africa"
+                        },
+                        "task_count": 0,
+                        "is_campaign": false,
+                        "amount_asked": "11000.00",
+                        "amount_donated": "12256.00",
+                        "amount_needed": "0.00",
+                        "deadline": "2014-09-03T15:10:44Z",
+                        "owner": {
+                            "id": 22950,
+                            "first_name": "Louise ",
+                            "last_name": "Seeto",
+                            "username": "louiseseeto",
+                            "avatar": "http://onepercentclub.com/static/media/cache/0e/ef/0eef5341ae476d32ba01f646e558646f.jpg",
+                            "full_name": "Louise  Seeto",
+                            "short_name": "Louise "
+                        },
+                        "partner": null
+                    }
+                }
+            ]
         }
-    ]
-}
 
 ### Create a Donation [POST]
 + Request (application/json)
