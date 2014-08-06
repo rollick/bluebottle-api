@@ -592,8 +592,12 @@ My Donation related resources of the **Donations API**
 ## My Donation Collection [/api/donations/my/]
 ### List all My Donations [GET]
 + Response 200 (application/json)
-
-        [{
+    {
+        "count": 2,
+        "next": null,
+        "previous", null,
+        "results":[
+        {
             "id": 1, 
             "amount": 20, 
             "fundraiser": null, 
@@ -666,6 +670,8 @@ My Donation related resources of the **Donations API**
                 "partner": null
             }            
         }]
+    }
+
 
 ### Create a Donation [POST]
 + Request (application/json)
