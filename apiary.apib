@@ -965,7 +965,10 @@ Payment related resources of the **Donations API**
             "integration_details": {
                 "url": "http://localhost:8000/payments_mock/payment-service-provider",
                 "method": "get",
-                "payload": null,
+                "payload": {
+                    return_url: "http://localhost:8000/payments_mock/payment-service-provider/",
+                    payment_id: 3
+                },
                 "type": "redirect"
             },
             "created": "2014-07-18T20:42:20.315Z",
