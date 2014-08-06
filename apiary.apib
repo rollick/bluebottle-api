@@ -589,8 +589,11 @@ A single Donation object with public details
 # Group My Donations
 My Donation related resources of the **Donations API**
 
-## My Donation Collection [/api/donations/my/]
+## My Donation Collection [/api/donations/my/?order={order_id}]
 ### List all My Donations [GET]
++ Parameters
+    + order_id (optional, number, `1`) ... Numeric `order_id` of the Order to perform action with. Has example value.
+
 + Response 200 (application/json)
 
         {
