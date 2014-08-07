@@ -1080,3 +1080,22 @@ Payment Method related resources of the **Donations API**
                 }
             ]
         }
+        
+## Payments [/api/payments/payment-methods/{id}]
+A single Payment Method object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Payment Method to perform action with. Has example value.
+
+### Retrieve a Payment Method [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": "creditcard", 
+                "profile": "creditcard", 
+                "supports_recurring": false, 
+                "name": "Credit Cards", 
+                "provider": "docdata"
+            }
