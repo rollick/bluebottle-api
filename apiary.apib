@@ -702,26 +702,77 @@ My Donation related resources of the **Donations API**
             "created": "2014-07-18T20:42:20.315Z" 
         }
         
-## My Donations [/api/donations/my/{id}]
+## My Donation [/api/donations/my/{id}]
 A single My Donation object with all its details
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the Donation to perform action with. Has example value.
 
++ Model (application/json)
+
+    JSON representation of My Donation Resource.
+
+    + Body
+
+            {
+                "id": 1,
+                "amount": 20,
+                "fundraiser": null,
+                "order": 1,
+                "user": 1,
+                "status": "pending",
+                "created": "2014-07-18T20:42:20.315Z",
+                "project": {
+                    "id": "booking-cares-the-next-development-steps",
+                    "title": "Code for Cares",
+                    "image": "http://onepercentclub.com/static/media/cache/c6/61/c661be75e95b6b6829c5b7df1e17446f.jpg",
+                    "status": 5,
+                    "pitch": "I need funds to build a clinic in the Magu District of Tanzania (East Africa). I'm Lulu. If you'd like a more detailed account of this project please visit www.luluinmagu.com.\r\n\r\n ",
+                    "country": {
+                        "id": 229,
+                        "name": "Tanzania",
+                        "subregion": "Eastern Africa"
+                    },
+                    "task_count": 0,
+                    "is_campaign": false,
+                    "amount_asked": "11000.00",
+                    "amount_donated": "12256.00",
+                    "amount_needed": "0.00",
+                    "deadline": "2014-09-03T15:10:44Z",
+                    "owner": {
+                        "id": 22950,
+                        "first_name": "Louise ",
+                        "last_name": "Seeto",
+                        "username": "louiseseeto",
+                        "avatar": "http://onepercentclub.com/static/media/cache/0e/ef/0eef5341ae476d32ba01f646e558646f.jpg",
+                        "full_name": "Louise  Seeto",
+                        "short_name": "Louise "
+                    },
+                    "partner": null
+                }
+            }
+
 ### Retrieve a single My Donation [GET]
 + Response 200 (application/json)
+
+    [My Donation][]
+
+### Update a My Donation [PUT]
++ Request
 
     + Body
 
             { 
-                "id": 2, 
+                "id": 1,
                 "amount": 30, 
-                "project": null, 
-                "fundraiser": 1, 
-                "order": 2, 
-                "status": "closed",
-                "user": 1,
-                "created": "2014-07-18T20:42:20.315Z" 
+                "project": 1, 
+                "fundraiser": null, 
+                "order": 1,
+                "user_id": 1
             }
+
++ Response 201 (application/json)
+
+    [My Donation][]
 
 ## My Project Donations Collection [/api/donations/my-projects/]
 ### List all My Project Donations [GET]
