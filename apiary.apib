@@ -1073,30 +1073,6 @@ Payment Method related resources of the **Donations API**
             "results": [
                 {
                     "id": 1,
-                    "provider": "docdata", 
-                    "profile": "ideal", 
-                    "restricted_countries": [
-                        "NL"
-                    ], 
-                    "name": "iDEAL", 
-                    "supports_recurring": false, 
-                    "id": "ideal"
-                }, 
-                {
-                    "id": 2,
-                    "provider": "docdata", 
-                    "profile": "directdebit", 
-                    "restricted_countries": [
-                        "NL"
-                    ], 
-                    "name": "Direct Debit", 
-                    "supports_single": false, 
-                    "max_amount": 10000, 
-                    "id": "direct-debit", 
-                    "supports_recurring": true
-                }, 
-                {
-                    "id": 3,
                     "provider": "docdata",
                     "profile": "creditcard", 
                     "supports_recurring": false, 
@@ -1104,37 +1080,12 @@ Payment Method related resources of the **Donations API**
                     "name": "Credit Cards"
                 }, 
                 {
-                    "id": 3,
+                    "id": 2,
                     "provider": "docdata",
                     "profile": "paypal", 
                     "supports_recurring": true, 
                     "id": "paypal", 
                     "name": "PayPal"
-                }, 
-                {
-                    "id": 4,
-                    "provider": "adyen",
-                    "profile": "ideal", 
-                    "restricted_countries": [
-                        "NL"
-                    ], 
-                    "name": "iDEAL", 
-                    "supports_recurring": false
-                }, 
-                {
-                    "id": 5,
-                    "provider": "adyen",
-                    "profile": "paypal", 
-                    "supports_single": false, 
-                    "max_amount": 1000, 
-                    "name": "PayPal" 
-                }, 
-                {
-                    "id": 6,
-                    "provider": "adyen",
-                    "profile": "creditcard", 
-                    "name": "CreditCard", 
-                    "supports_recurring": false
                 }
             ]
         }
