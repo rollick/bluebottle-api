@@ -890,7 +890,7 @@ A single My Donation object with all its details
 # Group Payments
 Payment related resources of the **Donations API**
 
-## Payments Collection [/api/payments/]
+## Payments Collection [/api/order_payments/]
 ### List all Payments [GET]
 + Response 200 (application/json)
 
@@ -929,7 +929,7 @@ Payment related resources of the **Donations API**
             "closed": null
         }
         
-## Payments [/api/payments/{id}]
+## Payments [/api/order_payments/{id}]
 A single Payment object with all its details
 
 + Parameters
@@ -953,7 +953,7 @@ A single Payment object with all its details
 ### Remove a Payment [DELETE]
 + Response 204
 
-## Payment CC-Type [/api/payments/cc-type/{cc_number}]
+## Payment CC-Type [/api/order_payments/cc-type/{cc_number}]
 A single Payment object with all its details
 
 + Parameters
@@ -970,7 +970,7 @@ A single Payment object with all its details
 # Group My Payments
 Payment related resources of the **Donations API**
 
-## My Payments Collection [/api/payments/my/]
+## My Payments Collection [/api/order_payments/my/]
 ### List all My Payments [GET]
 + Response 200 (application/json)
 
@@ -1030,7 +1030,7 @@ Payment related resources of the **Donations API**
             "closed": null
         }
 
-## My Payments [/api/payments/my/{payment_id}]
+## My Payments [/api/order_payments/my/{payment_id}]
 A single Payment object with all its details
 
 + Parameters
